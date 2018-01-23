@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TubeSave.iOS", "iOS\TubeSav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TubeSave.Droid", "Droid\TubeSave.Droid.csproj", "{8747D2D6-B132-46BA-B26A-A0992D8F33F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTubeSave", "UTubeSave\UTubeSave.csproj", "{D4090EF1-49F1-4493-A6C2-F945A58FD313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -41,5 +43,17 @@ Global
 		{8747D2D6-B132-46BA-B26A-A0992D8F33F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8747D2D6-B132-46BA-B26A-A0992D8F33F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8747D2D6-B132-46BA-B26A-A0992D8F33F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Release|iPhone.Build.0 = Release|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4090EF1-49F1-4493-A6C2-F945A58FD313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
