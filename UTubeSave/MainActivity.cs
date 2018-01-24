@@ -6,6 +6,7 @@ using YoutubeExtractor;
 using System.Linq;
 using System.Net;
 using System;
+using System.IO;
 
 namespace UTubeSave
 {
@@ -33,22 +34,24 @@ namespace UTubeSave
                 DownloadUrlResolver.DecryptDownloadUrl(video);
             }
 
-            var webClient = new WebClient();
+            //var videoDownloader = new VideoDownloader(video, Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
 
-            var url = new Uri(video.DownloadUrl);
+            //// Register the ProgressChanged event and print the current progress
+            //videoDownloader.DownloadProgressChanged += (sender, args) => Console.WriteLine(args.ProgressPercentage);
 
-            webClient.DownloadFileCompleted += (s, e) => {
-                System.Diagnostics.Debug.WriteLine("DownloadFileCompleted");
-                var sd = e.UserState;
-            };
+            ///*
+             //* Execute the video downloader.
+             //* For GUI applications note, that this method runs synchronously.
+             //*/
+            //videoDownloader.Execute();
 
-            webClient.DownloadProgressChanged += (sender, e) => 
-            {
-                System.Diagnostics.Debug.WriteLine("DownloadProgressChanged");
-                var i = e.ProgressPercentage;
-            };
+            var videoView = FindViewById<VideoView>(Resource.Id.SampleVideoView);
 
-            webClient.DownloadFile(url, Android.OS.Environment.ExternalStorageDirectory.Path + "/video.mp4");
+            var uri = Android.Net.Uri.Parse(Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
+
+            videoView.SetVideoURI(uri);
+
+            videoView.Start();
         }
     }
 }
