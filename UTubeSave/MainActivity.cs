@@ -1,15 +1,16 @@
-﻿using Android.App;
-using Android.Widget;
-using Android.OS;
+﻿using System;
 using System.Collections.Generic;
-using YoutubeExtractor;
-using System.Linq;
 using System.IO;
+using System.Linq;
+using Android.App;
 using Android.Gms.Ads;
+using Android.OS;
+using Android.Widget;
+using YoutubeExtractor;
 
 namespace UTubeSave
 {
-    [Activity(Label = "UTubeSave", MainLauncher = true)]
+    [Activity]
     public class MainActivity : Activity
     {
         string appId = "ca-app-pub-6653353220256677~5913709845";
@@ -25,18 +26,7 @@ namespace UTubeSave
 
             MobileAds.Initialize(this, appId);
 
-            var mAdView = FindViewById<AdView>(Resource.Id.adView);
-            var adRequest = new AdRequest.Builder().Build();
-            mAdView.LoadAd(adRequest);
-
-            //var mInterstitialAd = new InterstitialAd(this);
-            //mInterstitialAd.AdUnitId = GetString(Resource.String.test_interstitial_ad_unit_id);
-
-            //mInterstitialAd.AdListener = new AdListener();
-
-
-
-            string link = "https://www.youtube.com/watch?v=DHHY8m3rEzU";
+            string link = "https://www.youtube.com/watch?v=T8AgHAlwNeE";
             IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(link);
 
             VideoInfo video = videoInfos
@@ -50,24 +40,77 @@ namespace UTubeSave
                 DownloadUrlResolver.DecryptDownloadUrl(video);
             }
 
-            //var videoDownloader = new VideoDownloader(video, Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
+            var mAdView = FindViewById<AdView>(Resource.Id.adView);
+            var adRequest = new AdRequest.Builder().Build();
+            mAdView.LoadAd(adRequest);
 
-            //// Register the ProgressChanged event and print the current progress
-            //videoDownloader.DownloadProgressChanged += (sender, args) => Console.WriteLine(args.ProgressPercentage);
+            var mInterstitialAd = new InterstitialAd(this);
+            mInterstitialAd.AdUnitId = showId;
+            mInterstitialAd.Rewarded += (sender, e) => 
+            {
+                Console.WriteLine("mInterstitialAd.Rewarded " + e.Reward.Amount);
+            };
 
-            ///*
-             //* Execute the video downloader.
-             //* For GUI applications note, that this method runs synchronously.
-             //*/
-            //videoDownloader.Execute();
+            mInterstitialAd.RewardedVideoAdClosed += (sender, e) => 
+            {
+                Console.WriteLine("mInterstitialAd.RewardedVideoAdClosed ");
 
-            var videoView = FindViewById<VideoView>(Resource.Id.SampleVideoView);
+                var videoView = FindViewById<VideoView>(Resource.Id.SampleVideoView);
 
-            var uri = Android.Net.Uri.Parse(Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
+                var uri = Android.Net.Uri.Parse(Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
 
-            videoView.SetVideoURI(uri);
+                videoView.SetVideoURI(uri);
 
-            //videoView.Start();
+                videoView.SetMediaController(new Android.Widget.MediaController(this));
+
+                videoView.Start();
+            };
+
+            mInterstitialAd.RewardedVideoAdFailedToLoad += (sender, e) =>
+            {
+                 Console.WriteLine("mInterstitialAd.RewardedVideoAdFailedToLoad " + e.ErrorCode);
+            };
+
+            mInterstitialAd.RewardedVideoAdLeftApplication += (sender, e) =>
+            {
+                Console.WriteLine("mInterstitialAd.RewardedVideoAdLeftApplication ");
+            };
+
+            mInterstitialAd.RewardedVideoAdLoaded += (sender, e) =>
+            {
+                Console.WriteLine("mInterstitialAd.RewardedVideoAdLoaded ");
+                mInterstitialAd.Show();
+            };
+
+            mInterstitialAd.RewardedVideoAdOpened += (sender, e) =>
+            {
+                Console.WriteLine("mInterstitialAd.RewardedVideoAdOpened ");
+            };
+
+            mInterstitialAd.RewardedVideoStarted += (sender, e) =>
+            {
+                Console.WriteLine("mInterstitialAd.RewardedVideoStarted ");
+            };
+
+
+            var videoDownloader = new VideoDownloader(video, Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
+
+            // Register the ProgressChanged event and print the current progress
+            videoDownloader.DownloadProgressChanged += (sender, e) =>
+            {
+                Console.WriteLine(e.ProgressPercentage);
+
+                if (e.ProgressPercentage == 100)
+                {
+                    mInterstitialAd.LoadAd(new AdRequest.Builder().Build());
+                }
+            };
+
+            /*
+             * Execute the video downloader.
+             * For GUI applications note, that this method runs synchronously.
+             */
+            videoDownloader.Execute();
         }
     }
 }

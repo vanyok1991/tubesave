@@ -97,6 +97,8 @@
     <Compile Include="VideoDownloader.cs" />
     <Compile Include="Downloader.cs" />
     <Compile Include="ProgressEventArgs.cs" />
+    <Compile Include="HomeActivity.cs" />
+    <Compile Include="YouTubeWebViewClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -107,6 +109,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\layout\Home.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
