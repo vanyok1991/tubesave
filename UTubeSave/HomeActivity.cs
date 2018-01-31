@@ -31,7 +31,7 @@ namespace UTubeSave.Droid
         DownloadVideoView _downloadVideoView;
         ViewGroup _contentView;
         WebView _webView;
-        Button _saveButton;
+        ImageButton _saveButton;
         InterstitialAd _mInterstitialAd;
         IRewardedVideoAd _downloadVideoAd;
         VideoInfo _currentVideoInfo;
@@ -52,12 +52,18 @@ namespace UTubeSave.Droid
                 _webView?.Reload();
             };
 
+            var savedButton = FindViewById<ImageButton>(Resource.Id.savedButton);
+            savedButton.Click += (sender, e) => 
+            {
+                ShowSavedAd();
+            };
+
             MobileAds.Initialize(this, _appId);
             var mAdView = FindViewById<AdView>(Resource.Id.adView);
             var adRequest = new AdRequest.Builder().Build();
             mAdView.LoadAd(adRequest);
 
-            _saveButton = FindViewById<Button>(Resource.Id.saveButton);
+            _saveButton = FindViewById<ImageButton>(Resource.Id.saveButton);
             _saveButton.Click += SaveButtonClick;
 
             _webView = FindViewById<WebView>(Resource.Id.webView);
@@ -116,6 +122,17 @@ namespace UTubeSave.Droid
             }else
             {
                 Toast.MakeText(this, GetString(Resource.String.cannot_download), ToastLength.Short).Show();
+            }
+        }
+
+        void ShowSavedAd()
+        {
+            if (_mInterstitialAd.IsLoaded)
+            {
+                _mInterstitialAd.Show();
+            }else
+            {
+                StartActivity(typeof(SavedVideosActivity));
             }
         }
 
@@ -237,14 +254,14 @@ namespace UTubeSave.Droid
 
         void InterstitialAdRewardedVideoAdClosed(object sender, EventArgs e)
         {
-            LoadInterstitialAd();
+            _mInterstitialAd.LoadAd(new AdRequest.Builder().Build());
             if(_useShowAdForDownloading)
             {
                 DownloadCurrentContent();
             }
             else
             {
-                //Open downloadings
+                StartActivity(typeof(SavedVideosActivity));
             }
         }
 
@@ -275,7 +292,7 @@ namespace UTubeSave.Droid
 
         public void OnRewardedVideoAdClosed()
         {
-            LoadRewardedVideoAd();
+            _downloadVideoAd.LoadAd(_downloadAdId, new AdRequest.Builder().Build());
             Console.WriteLine("OnRewardedVideoAdOpened");
         }
 
@@ -287,6 +304,7 @@ namespace UTubeSave.Droid
             {
                 _useShowAdForDownloading = true;
             }
+            _downloadVideoAd.LoadAd(_downloadAdId, new AdRequest.Builder().Build());
         }
 
         public void OnRewardedVideoAdLeftApplication()

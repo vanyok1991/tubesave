@@ -118,6 +118,7 @@
     <Compile Include="Extractor\ProgressEventArgs.cs" />
     <Compile Include="Extractor\VideoDownloader.cs" />
     <Compile Include="AdMob\ErrorCode.cs" />
+    <Compile Include="SavedVideosActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -130,6 +131,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\layout\Home.axml" />
     <AndroidResource Include="Resources\layout\DownloadVideoView.axml" />
+    <AndroidResource Include="Resources\layout\SavedVideos.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
