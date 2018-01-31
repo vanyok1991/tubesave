@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     internal class Mp3AudioExtractor : IAudioExtractor
     {

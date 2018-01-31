@@ -1,7 +1,7 @@
 ﻿using System;
 using YoutubeExtractor;
 
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     public abstract class Downloader
     {

@@ -2,7 +2,7 @@
 using System.IO;
 using YoutubeExtractor;
 
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     public class AudioDownloader : Downloader
     {

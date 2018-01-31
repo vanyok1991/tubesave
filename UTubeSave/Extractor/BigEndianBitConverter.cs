@@ -1,5 +1,4 @@
-﻿using System;
-namespace UTubeSave
+﻿namespace UTubeSave.Droid.Extractor
 {
     internal static class BigEndianBitConverter
     {

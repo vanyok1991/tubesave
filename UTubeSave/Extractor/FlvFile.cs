@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     internal class FlvFile : IDisposable
     {

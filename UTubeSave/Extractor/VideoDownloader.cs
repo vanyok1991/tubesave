@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using YoutubeExtractor;
 
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     public class VideoDownloader : Downloader
     {

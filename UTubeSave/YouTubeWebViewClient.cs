@@ -1,7 +1,6 @@
-﻿using System;
-using Android.Webkit;
+﻿using Android.Webkit;
 
-namespace UTubeSave
+namespace UTubeSave.Droid
 {
     public class YouTubeWebViewClient : WebViewClient
     {

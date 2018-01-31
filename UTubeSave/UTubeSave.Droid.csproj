@@ -94,20 +94,21 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VideoDownloader.cs" />
-    <Compile Include="Downloader.cs" />
-    <Compile Include="ProgressEventArgs.cs" />
     <Compile Include="HomeActivity.cs" />
     <Compile Include="YouTubeWebViewClient.cs" />
-    <Compile Include="View\DownloadVideoView.cs" />
-    <Compile Include="AudioDownloader.cs" />
-    <Compile Include="FlvFile.cs" />
-    <Compile Include="IAudioExtractor.cs" />
-    <Compile Include="AudioExtractionException.cs" />
-    <Compile Include="BigEndianBitConverter.cs" />
-    <Compile Include="Mp3AudioExtractor.cs" />
-    <Compile Include="BitHelper.cs" />
-    <Compile Include="AacAudioExtractor.cs" />
+    <Compile Include="Views\DownloadVideoView.cs" />
+    <Compile Include="Extractor\AacAudioExtractor.cs" />
+    <Compile Include="Extractor\AudioDownloader.cs" />
+    <Compile Include="Extractor\AudioExtractionException.cs" />
+    <Compile Include="Extractor\BigEndianBitConverter.cs" />
+    <Compile Include="Extractor\BitHelper.cs" />
+    <Compile Include="Extractor\Downloader.cs" />
+    <Compile Include="Extractor\FlvFile.cs" />
+    <Compile Include="Extractor\IAudioExtractor.cs" />
+    <Compile Include="Extractor\Mp3AudioExtractor.cs" />
+    <Compile Include="Extractor\ProgressEventArgs.cs" />
+    <Compile Include="Extractor\VideoDownloader.cs" />
+    <Compile Include="AdMob\ErrorCode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -128,7 +129,9 @@
     <Folder Include="Resources\mipmap-xxhdpi\" />
     <Folder Include="Resources\mipmap-xxxhdpi\" />
     <Folder Include="Resources\drawable\" />
-    <Folder Include="View\" />
+    <Folder Include="Views\" />
+    <Folder Include="Extractor\" />
+    <Folder Include="AdMob\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.26.0.2\build\MonoAndroid80\Xamarin.Android.Support.Annotations.targets')" />

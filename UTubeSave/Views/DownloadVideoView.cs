@@ -7,7 +7,7 @@ using Android.Views;
 using Android.Widget;
 using YoutubeExtractor;
 
-namespace UTubeSave.View
+namespace UTubeSave.Droid.Views
 {
     public class DownloadVideoView : RelativeLayout
     {

@@ -13,10 +13,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
-using UTubeSave.View;
+using UTubeSave.AdMob;
+using UTubeSave.Droid.Extractor;
+using UTubeSave.Droid.Views;
 using YoutubeExtractor;
 
-namespace UTubeSave
+namespace UTubeSave.Droid
 {
     [Activity(MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar")]
     public class HomeActivity : Activity, IRewardedVideoAdListener
@@ -27,7 +29,7 @@ namespace UTubeSave
         const string _youtubeHomeUrl = "https://www.youtube.com/?app=desktop&persist_app=1&noapp=1";
 
         DownloadVideoView _downloadVideoView;
-        Android.Views.ViewGroup _contentView;
+        ViewGroup _contentView;
         WebView _webView;
         Button _saveButton;
         InterstitialAd _mInterstitialAd;
@@ -35,6 +37,7 @@ namespace UTubeSave
         VideoInfo _currentVideoInfo;
         VideoInfo _currentAudioInfo;
         bool _isAudioDownloading;
+        bool _useShowAdForDownloading;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -96,6 +99,12 @@ namespace UTubeSave
 
         void ShowRewardAd()
         {
+            if(_useShowAdForDownloading && _mInterstitialAd.IsLoaded)
+            {
+                _mInterstitialAd.Show();
+                return;
+            }
+
             if(_downloadVideoAd.IsLoaded)
             {
                 _downloadVideoAd.Show();
@@ -224,6 +233,26 @@ namespace UTubeSave
         void InterstitialAdRewardedVideoAdClosed(object sender, EventArgs e)
         {
             LoadInterstitialAd();
+            if(_useShowAdForDownloading)
+            {
+                DownloadCurrentContent();
+            }
+            else
+            {
+                //Open downloadings
+            }
+        }
+
+        void DownloadCurrentContent()
+        {
+            if (_isAudioDownloading)
+            {
+                DownloadAudio(_currentAudioInfo);
+            }
+            else
+            {
+                DownloadVideo(_currentVideoInfo);
+            }
         }
 
         void LoadRewardedVideoAd()
@@ -236,14 +265,7 @@ namespace UTubeSave
         public void OnRewarded(IRewardItem reward)
         {
             Console.WriteLine($"OnRewardedVideoAdOpened {reward.Amount}");
-            if (_isAudioDownloading)
-            {
-                DownloadAudio(_currentAudioInfo);
-            }
-            else
-            {
-                DownloadVideo(_currentVideoInfo);
-            }
+            DownloadCurrentContent();
         }
 
         public void OnRewardedVideoAdClosed()
@@ -255,6 +277,11 @@ namespace UTubeSave
         public void OnRewardedVideoAdFailedToLoad(int errorCode)
         {
             Console.WriteLine($"OnRewardedVideoAdFailedToLoad ErrorCode: {errorCode}");
+
+            if(errorCode == ErrorCode.ERROR_CODE_NO_FILL)
+            {
+                _useShowAdForDownloading = true;
+            }
         }
 
         public void OnRewardedVideoAdLeftApplication()
@@ -265,6 +292,7 @@ namespace UTubeSave
         public void OnRewardedVideoAdLoaded()
         {
             Console.WriteLine("OnRewardedVideoAdLoaded");
+            _useShowAdForDownloading = false;
         }
 
         public void OnRewardedVideoAdOpened()

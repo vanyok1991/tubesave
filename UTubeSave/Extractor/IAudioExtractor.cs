@@ -1,5 +1,5 @@
 ﻿using System;
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     internal interface IAudioExtractor : IDisposable
     {

@@ -1,7 +1,6 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
-namespace UTubeSave
+namespace UTubeSave.Droid.Extractor
 {
     internal class AacAudioExtractor : IAudioExtractor
     {

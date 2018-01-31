@@ -6,15 +6,16 @@ using Android.App;
 using Android.Gms.Ads;
 using Android.OS;
 using Android.Widget;
+using UTubeSave.Droid.Extractor;
 using YoutubeExtractor;
 
-namespace UTubeSave
+namespace UTubeSave.Droid
 {
     [Activity]
     public class MainActivity : Activity
     {
         string appId = "ca-app-pub-6653353220256677~5913709845";
-        string bunnerId = "ca-app-pub-6653353220256677/9117978752";
+        //string bunnerId = "ca-app-pub-6653353220256677/9117978752";
         string showId = "ca-app-pub-6653353220256677/4139972485";
 
         protected override void OnCreate(Bundle savedInstanceState)
