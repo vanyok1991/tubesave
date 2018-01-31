@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +13,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
+using UTubeSave.View;
 using YoutubeExtractor;
 
 namespace UTubeSave
@@ -26,16 +26,23 @@ namespace UTubeSave
         const string _downloadAdId = "ca-app-pub-6653353220256677/7893516677";
         const string _youtubeHomeUrl = "https://www.youtube.com/?app=desktop&persist_app=1&noapp=1";
 
+        DownloadVideoView _downloadVideoView;
+        Android.Views.ViewGroup _contentView;
         WebView _webView;
         Button _saveButton;
         InterstitialAd _mInterstitialAd;
         IRewardedVideoAd _downloadVideoAd;
+        VideoInfo _currentVideoInfo;
+        VideoInfo _currentAudioInfo;
+        bool _isAudioDownloading;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Home);
+
+            _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
 
             MobileAds.Initialize(this, _appId);
             var mAdView = FindViewById<AdView>(Resource.Id.adView);
@@ -66,6 +73,12 @@ namespace UTubeSave
 
         public override void OnBackPressed()
         {
+            if(_downloadVideoView != null)
+            {
+                HideDownloadVideoView();
+                return;
+            }
+
             if (_webView.CanGoBack())
             {
                 _webView.GoBack();
@@ -78,54 +91,61 @@ namespace UTubeSave
 
         void SaveButtonClick(object sender, EventArgs e)
         {
-            ShowAdd();
+            ShowDownloadVideoView();
         }
 
-        void ShowAdd()
+        void ShowRewardAd()
         {
-            if(!CheckVideoAvailability(_webView.OriginalUrl))
-            {
-                return;
-            }
-
             if(_downloadVideoAd.IsLoaded)
             {
                 _downloadVideoAd.Show();
             }else
             {
-                Toast.MakeText(this, "Sorry, you can't download video at this time", ToastLength.Short).Show();
+                Toast.MakeText(this, GetString(Resource.String.cannot_download), ToastLength.Short).Show();
             }
         }
 
-        bool CheckVideoAvailability(string url)
+        void ShowDownloadVideoView()
+        {
+            var videos = CheckVideoAvailability(_webView.OriginalUrl);
+            if (videos?.Count() > 0)
+            {
+                _downloadVideoView = new DownloadVideoView(this, videos);
+                _downloadVideoView.SaveAudioClicked += DownloadVideoViewSaveAudioClicked;
+                _downloadVideoView.SaveVideoClicked += DownloadVideoViewSaveVideoClicked;
+                _contentView.AddView(_downloadVideoView);
+            }
+        }
+
+        void HideDownloadVideoView()
+        {
+            _contentView.RemoveView(_downloadVideoView);
+            _downloadVideoView = null;
+        }
+
+        IEnumerable<VideoInfo> CheckVideoAvailability(string url)
         {
             try
             {
                 IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(url);
-
-                return videoInfos?.Count() > 0;
+                return videoInfos;
             }catch (Exception ex)
             {
                 Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
-                return false;
+                return null;
             }
         }
 
-        void DownloadVideo(string originalUrl)
+        void DownloadVideo(VideoInfo videoInfo)
         {
             try
             {
-                IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(originalUrl);
-
-                VideoInfo video = videoInfos
-                    .First(info => info.VideoType == VideoType.Mp4 && info.Resolution == 360);
-
-                if (video.RequiresDecryption)
+                if (videoInfo.RequiresDecryption)
                 {
-                    DownloadUrlResolver.DecryptDownloadUrl(video);
+                    DownloadUrlResolver.DecryptDownloadUrl(videoInfo);
                 }
 
-                var videoDownloader = new VideoDownloader(video, Path.Combine(ApplicationInfo.DataDir, video.Title + video.VideoExtension));
+                var videoDownloader = new VideoDownloader(videoInfo, Path.Combine(ApplicationInfo.DataDir, videoInfo.Title + videoInfo.VideoExtension));
 
                 videoDownloader.DownloadProgressChanged += (sender, e) =>
                 {
@@ -151,7 +171,53 @@ namespace UTubeSave
             }catch (Exception ex)
             {
                 Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
-                Console.WriteLine($"DownloadVideo {ex.Message} {originalUrl}");
+                Console.WriteLine($"DownloadVideo {ex.Message}");
+            }
+        }
+
+        void DownloadAudio(VideoInfo audioInfo)
+        {
+            try
+            {
+                if (audioInfo.RequiresDecryption)
+                {
+                    DownloadUrlResolver.DecryptDownloadUrl(audioInfo);
+                }
+
+                var audioDownloader = new AudioDownloader(audioInfo, Path.Combine(ApplicationInfo.DataDir, audioInfo.Title + audioInfo.AudioExtension));
+
+                audioDownloader.DownloadProgressChanged += (sender, e) =>
+                {
+                    Console.WriteLine(e.ProgressPercentage);
+                };
+
+                audioDownloader.AudioExtractionProgressChanged += (sender, e) => 
+                {
+                    Console.WriteLine(e.ProgressPercentage);
+                };
+
+                var thread = new Thread(() =>
+                {
+                    try
+                    {
+                        audioDownloader.Execute();
+                    }
+                    catch (Exception ex)
+                    {
+                        RunOnUiThread(() =>
+                        {
+                            Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
+                        });
+                    }
+                });
+
+                thread.Start();
+
+            }
+            catch (Exception ex)
+            {
+                Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
+                Console.WriteLine($"DownloadAudio {ex.Message}");
             }
         }
 
@@ -170,7 +236,14 @@ namespace UTubeSave
         public void OnRewarded(IRewardItem reward)
         {
             Console.WriteLine($"OnRewardedVideoAdOpened {reward.Amount}");
-            DownloadVideo(_webView?.OriginalUrl);
+            if (_isAudioDownloading)
+            {
+                DownloadAudio(_currentAudioInfo);
+            }
+            else
+            {
+                DownloadVideo(_currentVideoInfo);
+            }
         }
 
         public void OnRewardedVideoAdClosed()
@@ -202,6 +275,22 @@ namespace UTubeSave
         public void OnRewardedVideoStarted()
         {
             Console.WriteLine("OnRewardedVideoStarted");
+        }
+
+        void DownloadVideoViewSaveAudioClicked(object sender, VideoInfo e)
+        {
+            _isAudioDownloading = true;
+            _currentAudioInfo = e;
+            HideDownloadVideoView();
+            ShowRewardAd();
+        }
+
+        void DownloadVideoViewSaveVideoClicked(object sender, VideoInfo e)
+        {
+            _isAudioDownloading = false;
+            _currentVideoInfo = e;
+            HideDownloadVideoView();
+            ShowRewardAd();
         }
     }
 }

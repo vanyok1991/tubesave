@@ -1,4 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">UTubeSave</string>
+    <string name="resolution">Resolution</string>
+    <string name="video_type">Video Type</string>
+    <string name="audio_bitrade">Audio Bitrade</string>
+    <string name="audio_type">Audio Type</string>
+    <string name="save_audio">Save Audio</string>
+    <string name="save_video">Save Video</string>
+
+    <string name="cannot_download">Sorry, you can\'t download video at this time, please try later</string>
+    <string name="cannot_download_video">Sorry, you can\'t download video at this time, please try later</string>
+    <string name="cannot_download_audio">Sorry, you can\'t download this video, please, choose another parameters</string>
 </resources>
