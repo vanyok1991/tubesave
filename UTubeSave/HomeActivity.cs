@@ -46,6 +46,11 @@ namespace UTubeSave.Droid
             SetContentView(Resource.Layout.Home);
 
             _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
+            var updateButton = FindViewById<ImageButton>(Resource.Id.updateButton);
+            updateButton.Click += (sender, e) =>
+            {
+                _webView?.Reload();
+            };
 
             MobileAds.Initialize(this, _appId);
             var mAdView = FindViewById<AdView>(Resource.Id.adView);
