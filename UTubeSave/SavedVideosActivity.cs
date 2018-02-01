@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace UTubeSave
+namespace UTubeSave.Droid
 {
     [Activity(Theme = "@android:style/Theme.NoTitleBar")]
     public class SavedVideosActivity : Activity

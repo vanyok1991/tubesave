@@ -30,6 +30,7 @@ namespace UTubeSave.Droid
 
         DownloadVideoView _downloadVideoView;
         ViewGroup _contentView;
+        ViewGroup _downloadsView;
         WebView _webView;
         ImageButton _saveButton;
         InterstitialAd _mInterstitialAd;
@@ -46,6 +47,8 @@ namespace UTubeSave.Droid
             SetContentView(Resource.Layout.Home);
 
             _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
+            _downloadsView = FindViewById<ViewGroup>(Resource.Id.currentDownloads);
+
             var updateButton = FindViewById<ImageButton>(Resource.Id.updateButton);
             updateButton.Click += (sender, e) =>
             {
@@ -178,10 +181,18 @@ namespace UTubeSave.Droid
 
                 var videoDownloader = new VideoDownloader(videoInfo, Path.Combine(ApplicationInfo.DataDir, videoInfo.Title + videoInfo.VideoExtension));
 
-                videoDownloader.DownloadProgressChanged += (sender, e) =>
+                var downloadView = new DownloadItemView(this, videoDownloader);
+
+                downloadView.DownloadFinished += (sender, e) => 
                 {
-                    Console.WriteLine(e.ProgressPercentage);
+                    RunOnUiThread(() =>
+                    {
+                        _downloadsView.RemoveView(sender as View);
+                    });
+                    //TODO save info from e to storage
                 };
+
+                _downloadsView.AddView(downloadView);
 
                 var thread = new Thread(() =>
                 {
