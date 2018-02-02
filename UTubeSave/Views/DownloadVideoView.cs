@@ -16,7 +16,6 @@ namespace UTubeSave.Droid.Views
         Spinner _videoTypeSpinner;
         Spinner _audioBitradeSpinner;
         Spinner _audioTypeSpinner;
-        Button _saveAudioButton;
         Button _saveVideoButton;
 
         List<int> _resolutions;
@@ -24,7 +23,6 @@ namespace UTubeSave.Droid.Views
         List<int> _audioBitrades;
         List<AudioType> _audioTypes;
 
-        public event EventHandler<VideoInfo> SaveAudioClicked;
         public event EventHandler<VideoInfo> SaveVideoClicked;
 
         public DownloadVideoView(Context context, IEnumerable<VideoInfo> videos) :
@@ -55,7 +53,6 @@ namespace UTubeSave.Droid.Views
             _videoTypeSpinner = view.FindViewById<Spinner>(Resource.Id.videoTypeSpinner);
             _audioBitradeSpinner = view.FindViewById<Spinner>(Resource.Id.audioBitradeSpinner);
             _audioTypeSpinner = view.FindViewById<Spinner>(Resource.Id.audioTypeSpinner);
-            _saveAudioButton = view.FindViewById<Button>(Resource.Id.saveAudioButton);
             _saveVideoButton = view.FindViewById<Button>(Resource.Id.saveVideoButton);
 
             _resolutions = _videos.Where(v => v.Resolution != 0).Select(v => v.Resolution).Distinct().ToList();
@@ -65,7 +62,6 @@ namespace UTubeSave.Droid.Views
             _resolutionSpinner.ItemSelected += ResolutionSpinnerItemSelected;
             _resolutionSpinner.Adapter = resolutionAdapter;
 
-            _saveAudioButton.Click += SaveAudioButtonClick;
             _saveVideoButton.Click += SaveVideoButtonClick;
         }
 
@@ -104,8 +100,7 @@ namespace UTubeSave.Droid.Views
 
         void AudioTypeSpinnerItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            var audioPosibilityCount = _videos.Count(v => v.CanExtractAudio);
-            _saveAudioButton.Enabled = audioPosibilityCount > 0;
+            
         }
 
         void SaveAudioButtonClick(object sender, EventArgs e)
@@ -113,7 +108,7 @@ namespace UTubeSave.Droid.Views
             var audioInfo = _videos.FirstOrDefault(v => v.CanExtractAudio);
             if (audioInfo != null)
             {
-                SaveAudioClicked?.Invoke(this, audioInfo);
+                //SaveAudioClicked?.Invoke(this, audioInfo);
             }else
             {
                 Toast.MakeText(this.Context, Context.GetString(Resource.String.cannot_download_audio), ToastLength.Short).Show();

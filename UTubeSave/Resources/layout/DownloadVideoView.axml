@@ -48,7 +48,12 @@
             android:id="@+id/audioTypeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <LinearLayout
+        <Button
+            android:id="@+id/saveVideoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_video" />
+    <!--<LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,6 +70,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/save_video" />
-        </LinearLayout>
+        </LinearLayout>-->
     </LinearLayout>
 </RelativeLayout>

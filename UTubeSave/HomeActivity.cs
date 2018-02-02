@@ -28,9 +28,6 @@ namespace UTubeSave.Droid
         WebView _webView;
         View _activityView;
         ImageButton _saveButton;
-        VideoInfo _currentVideoInfo;
-        VideoInfo _currentAudioInfo;
-        bool _isAudioDownloading;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -93,7 +90,7 @@ namespace UTubeSave.Droid
             await ShowDownloadVideoView();
         }
 
-        async Task ShowRewardAd()
+        async Task ShowRewardAdAndDownload(VideoInfo videoInfo)
         {
             _activityView.Visibility = ViewStates.Visible;
             var result = await Advertistment.Instance.ShowRewardAd(this);
@@ -101,7 +98,8 @@ namespace UTubeSave.Droid
 
             if(result)
             {
-                DownloadCurrentContent();
+                HideDownloadVideoView();
+                DownloadVideo(videoInfo);
             }else
             {
                 Toast.MakeText(this, GetString(Resource.String.cannot_download), ToastLength.Short).Show();
@@ -126,7 +124,6 @@ namespace UTubeSave.Droid
             if (videos?.Count() > 0)
             {
                 _downloadVideoView = new DownloadVideoView(this, videos);
-                _downloadVideoView.SaveAudioClicked += DownloadVideoViewSaveAudioClicked;
                 _downloadVideoView.SaveVideoClicked += DownloadVideoViewSaveVideoClicked;
                 _contentView.AddView(_downloadVideoView);
             }
@@ -245,33 +242,9 @@ namespace UTubeSave.Droid
             }
         }
 
-        void DownloadCurrentContent()
-        {
-            if (_isAudioDownloading)
-            {
-                DownloadAudio(_currentAudioInfo);
-            }
-            else
-            {
-                DownloadVideo(_currentVideoInfo);
-            }
-        }
-
-
-        async void DownloadVideoViewSaveAudioClicked(object sender, VideoInfo e)
-        {
-            _isAudioDownloading = true;
-            _currentAudioInfo = e;
-            HideDownloadVideoView();
-            await ShowRewardAd();
-        }
-
         async void DownloadVideoViewSaveVideoClicked(object sender, VideoInfo e)
         {
-            _isAudioDownloading = false;
-            _currentVideoInfo = e;
-            HideDownloadVideoView();
-            await ShowRewardAd();
+            await ShowRewardAdAndDownload(e);
         }
     }
 }
