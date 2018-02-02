@@ -44,9 +44,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="YoutubeExtractor">
-      <HintPath>..\packages\YoutubeExtractor.0.10.11\lib\portable-net45+win8+wpa81+wp8\YoutubeExtractor.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -128,6 +125,19 @@
     <Compile Include="Views\DownloadItemView.cs" />
     <Compile Include="Model\Video.cs" />
     <Compile Include="Helpers\Storage.cs" />
+    <Compile Include="Extractor\DownloadUrlResolver.cs" />
+    <Compile Include="Extractor\HttpHelper.cs" />
+    <Compile Include="Extractor\Decipherer.cs" />
+    <Compile Include="Extractor\VideoInfo.cs" />
+    <Compile Include="Extractor\VideoType.cs" />
+    <Compile Include="Extractor\AudioType.cs" />
+    <Compile Include="Extractor\AdaptiveType.cs" />
+    <Compile Include="Extractor\VideoNotAvailableException.cs" />
+    <Compile Include="Extractor\YoutubeParseException.cs" />
+    <Compile Include="Helpers\Advertistment.cs" />
+    <Compile Include="Helpers\Advert\RewardAd.cs" />
+    <Compile Include="Helpers\Advert\RewardAdStatus.cs" />
+    <Compile Include="Helpers\Advert\BetweenPagesAd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -155,6 +165,7 @@
     <Folder Include="AdMob\" />
     <Folder Include="Model\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Helpers\Advert\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />

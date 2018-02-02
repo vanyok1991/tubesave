@@ -366,26 +366,29 @@ namespace UTubeSave.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a0023
-			public const int SampleVideoView = 2131361827;
-			
-			// aapt resource value: 0x7f0a0027
-			public const int action0 = 2131361831;
-			
 			// aapt resource value: 0x7f0a0024
-			public const int action_container = 2131361828;
+			public const int SampleVideoView = 2131361828;
 			
-			// aapt resource value: 0x7f0a002b
-			public const int action_divider = 2131361835;
+			// aapt resource value: 0x7f0a0028
+			public const int action0 = 2131361832;
 			
 			// aapt resource value: 0x7f0a0025
-			public const int action_image = 2131361829;
+			public const int action_container = 2131361829;
+			
+			// aapt resource value: 0x7f0a002c
+			public const int action_divider = 2131361836;
 			
 			// aapt resource value: 0x7f0a0026
-			public const int action_text = 2131361830;
+			public const int action_image = 2131361830;
 			
-			// aapt resource value: 0x7f0a0035
-			public const int actions = 2131361845;
+			// aapt resource value: 0x7f0a0027
+			public const int action_text = 2131361831;
+			
+			// aapt resource value: 0x7f0a0036
+			public const int actions = 2131361846;
+			
+			// aapt resource value: 0x7f0a0023
+			public const int activityBar = 2131361827;
 			
 			// aapt resource value: 0x7f0a0022
 			public const int adView = 2131361826;
@@ -411,11 +414,11 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a000f
 			public const int blocking = 2131361807;
 			
-			// aapt resource value: 0x7f0a0028
-			public const int cancel_action = 2131361832;
+			// aapt resource value: 0x7f0a0029
+			public const int cancel_action = 2131361833;
 			
-			// aapt resource value: 0x7f0a0030
-			public const int chronometer = 2131361840;
+			// aapt resource value: 0x7f0a0031
+			public const int chronometer = 2131361841;
 			
 			// aapt resource value: 0x7f0a001b
 			public const int contentView = 2131361819;
@@ -429,23 +432,23 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0014
 			public const int downloadProgressBar = 2131361812;
 			
-			// aapt resource value: 0x7f0a0037
-			public const int end_padder = 2131361847;
+			// aapt resource value: 0x7f0a0038
+			public const int end_padder = 2131361848;
 			
 			// aapt resource value: 0x7f0a0010
 			public const int forever = 2131361808;
 			
-			// aapt resource value: 0x7f0a0032
-			public const int icon = 2131361842;
+			// aapt resource value: 0x7f0a0033
+			public const int icon = 2131361843;
 			
-			// aapt resource value: 0x7f0a0036
-			public const int icon_group = 2131361846;
+			// aapt resource value: 0x7f0a0037
+			public const int icon_group = 2131361847;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int icon_only = 2131361800;
 			
-			// aapt resource value: 0x7f0a0031
-			public const int info = 2131361841;
+			// aapt resource value: 0x7f0a0032
+			public const int info = 2131361842;
 			
 			// aapt resource value: 0x7f0a0011
 			public const int italic = 2131361809;
@@ -459,8 +462,8 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0001
 			public const int line3 = 2131361793;
 			
-			// aapt resource value: 0x7f0a002a
-			public const int media_actions = 2131361834;
+			// aapt resource value: 0x7f0a002b
+			public const int media_actions = 2131361835;
 			
 			// aapt resource value: 0x7f0a0007
 			public const int none = 2131361799;
@@ -468,23 +471,23 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0012
 			public const int normal = 2131361810;
 			
-			// aapt resource value: 0x7f0a0034
-			public const int notification_background = 2131361844;
+			// aapt resource value: 0x7f0a0035
+			public const int notification_background = 2131361845;
+			
+			// aapt resource value: 0x7f0a002e
+			public const int notification_main_column = 2131361838;
 			
 			// aapt resource value: 0x7f0a002d
-			public const int notification_main_column = 2131361837;
-			
-			// aapt resource value: 0x7f0a002c
-			public const int notification_main_column_container = 2131361836;
+			public const int notification_main_column_container = 2131361837;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int resolutionSpinner = 2131361813;
 			
-			// aapt resource value: 0x7f0a0033
-			public const int right_icon = 2131361843;
+			// aapt resource value: 0x7f0a0034
+			public const int right_icon = 2131361844;
 			
-			// aapt resource value: 0x7f0a002e
-			public const int right_side = 2131361838;
+			// aapt resource value: 0x7f0a002f
+			public const int right_side = 2131361839;
 			
 			// aapt resource value: 0x7f0a0019
 			public const int saveAudioButton = 2131361817;
@@ -498,11 +501,14 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a001e
 			public const int savedButton = 2131361822;
 			
+			// aapt resource value: 0x7f0a0039
+			public const int savedVideos = 2131361849;
+			
 			// aapt resource value: 0x7f0a0009
 			public const int standard = 2131361801;
 			
-			// aapt resource value: 0x7f0a0029
-			public const int status_bar_latest_event_content = 2131361833;
+			// aapt resource value: 0x7f0a002a
+			public const int status_bar_latest_event_content = 2131361834;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int text = 2131361794;
@@ -510,8 +516,8 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0003
 			public const int text2 = 2131361795;
 			
-			// aapt resource value: 0x7f0a002f
-			public const int time = 2131361839;
+			// aapt resource value: 0x7f0a0030
+			public const int time = 2131361840;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int title = 2131361796;

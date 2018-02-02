@@ -2,45 +2,35 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Android.App;
-using Android.Content;
 using Android.Gms.Ads;
-using Android.Gms.Ads.Reward;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
-using UTubeSave.AdMob;
 using UTubeSave.Droid.Extractor;
 using UTubeSave.Droid.Helpers;
 using UTubeSave.Droid.Model;
 using UTubeSave.Droid.Views;
-using YoutubeExtractor;
 
 namespace UTubeSave.Droid
 {
     [Activity(MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar")]
-    public class HomeActivity : Activity, IRewardedVideoAdListener
+    public class HomeActivity : Activity
     {
-        const string _appId = "ca-app-pub-6653353220256677~5913709845";
-        const string _showId = "ca-app-pub-6653353220256677/4139972485";
-        const string _downloadAdId = "ca-app-pub-6653353220256677/7893516677";
         const string _youtubeHomeUrl = "https://www.youtube.com/?app=desktop&persist_app=1&noapp=1";
 
         DownloadVideoView _downloadVideoView;
         ViewGroup _contentView;
         ViewGroup _downloadsView;
         WebView _webView;
+        View _activityView;
         ImageButton _saveButton;
-        InterstitialAd _mInterstitialAd;
-        IRewardedVideoAd _downloadVideoAd;
         VideoInfo _currentVideoInfo;
         VideoInfo _currentAudioInfo;
         bool _isAudioDownloading;
-        bool _useShowAdForDownloading;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,6 +40,7 @@ namespace UTubeSave.Droid
 
             _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
             _downloadsView = FindViewById<ViewGroup>(Resource.Id.currentDownloads);
+            _activityView = FindViewById(Resource.Id.activityBar);
 
             var updateButton = FindViewById<ImageButton>(Resource.Id.updateButton);
             updateButton.Click += (sender, e) =>
@@ -58,15 +49,15 @@ namespace UTubeSave.Droid
             };
 
             var savedButton = FindViewById<ImageButton>(Resource.Id.savedButton);
-            savedButton.Click += (sender, e) => 
+            savedButton.Click += async (sender, e) =>
             {
-                ShowSavedAd();
+                await ShowSavedAd();
             };
 
-            MobileAds.Initialize(this, _appId);
+            Advertistment.Instance.InitApp(this);
+
             var mAdView = FindViewById<AdView>(Resource.Id.adView);
-            var adRequest = new AdRequest.Builder().Build();
-            mAdView.LoadAd(adRequest);
+            Advertistment.Instance.LoadAd(mAdView);
 
             _saveButton = FindViewById<ImageButton>(Resource.Id.saveButton);
             _saveButton.Click += SaveButtonClick;
@@ -77,17 +68,6 @@ namespace UTubeSave.Droid
             _webView.SetWebViewClient(webClient);
             _webView.Settings.JavaScriptEnabled = true;
             _webView.LoadUrl(_youtubeHomeUrl);
-
-            LoadInterstitialAd();
-            LoadRewardedVideoAd();
-        }
-
-        void LoadInterstitialAd()
-        {
-            _mInterstitialAd = new InterstitialAd(this);
-            _mInterstitialAd.AdUnitId = _showId;
-            _mInterstitialAd.RewardedVideoAdClosed += InterstitialAdRewardedVideoAdClosed;
-            _mInterstitialAd.LoadAd(new AdRequest.Builder().Build());
         }
 
         public override void OnBackPressed()
@@ -108,42 +88,41 @@ namespace UTubeSave.Droid
             }
         }
 
-        void SaveButtonClick(object sender, EventArgs e)
+        async void SaveButtonClick(object sender, EventArgs e)
         {
-            ShowDownloadVideoView();
+            await ShowDownloadVideoView();
         }
 
-        void ShowRewardAd()
+        async Task ShowRewardAd()
         {
-            if(_useShowAdForDownloading && _mInterstitialAd.IsLoaded)
-            {
-                _mInterstitialAd.Show();
-                return;
-            }
+            _activityView.Visibility = ViewStates.Visible;
+            var result = await Advertistment.Instance.ShowRewardAd(this);
+            _activityView.Visibility = ViewStates.Gone;
 
-            if(_downloadVideoAd.IsLoaded)
+            if(result)
             {
-                _downloadVideoAd.Show();
+                DownloadCurrentContent();
             }else
             {
                 Toast.MakeText(this, GetString(Resource.String.cannot_download), ToastLength.Short).Show();
             }
         }
 
-        void ShowSavedAd()
+        async Task ShowSavedAd()
         {
-            if (_mInterstitialAd.IsLoaded)
-            {
-                _mInterstitialAd.Show();
-            }else
-            {
-                StartActivity(typeof(SavedVideosActivity));
-            }
+            _activityView.Visibility = ViewStates.Visible;
+            await Advertistment.Instance.ShowBetweenPagesAd(this);
+            _activityView.Visibility = ViewStates.Gone;
+
+            StartActivity(typeof(SavedVideosActivity));
         }
 
-        void ShowDownloadVideoView()
+        async Task ShowDownloadVideoView()
         {
-            var videos = CheckVideoAvailability(_webView.OriginalUrl);
+            _activityView.Visibility = ViewStates.Visible;
+            var videos = await CheckVideoAvailability(_webView.OriginalUrl);
+            _activityView.Visibility = ViewStates.Gone;
+
             if (videos?.Count() > 0)
             {
                 _downloadVideoView = new DownloadVideoView(this, videos);
@@ -159,11 +138,11 @@ namespace UTubeSave.Droid
             _downloadVideoView = null;
         }
 
-        IEnumerable<VideoInfo> CheckVideoAvailability(string url)
+        async Task<IEnumerable<VideoInfo>> CheckVideoAvailability(string url)
         {
             try
             {
-                IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(url);
+                IEnumerable<VideoInfo> videoInfos = await DownloadUrlResolver.GetDownloadUrlsAsync(url);
                 return videoInfos;
             }catch (Exception ex)
             {
@@ -266,19 +245,6 @@ namespace UTubeSave.Droid
             }
         }
 
-        void InterstitialAdRewardedVideoAdClosed(object sender, EventArgs e)
-        {
-            _mInterstitialAd.LoadAd(new AdRequest.Builder().Build());
-            if(_useShowAdForDownloading)
-            {
-                DownloadCurrentContent();
-            }
-            else
-            {
-                StartActivity(typeof(SavedVideosActivity));
-            }
-        }
-
         void DownloadCurrentContent()
         {
             if (_isAudioDownloading)
@@ -291,71 +257,21 @@ namespace UTubeSave.Droid
             }
         }
 
-        void LoadRewardedVideoAd()
-        {
-            _downloadVideoAd = MobileAds.GetRewardedVideoAdInstance(this);
-            _downloadVideoAd.RewardedVideoAdListener = this;
-            _downloadVideoAd.LoadAd(_downloadAdId, new AdRequest.Builder().Build());
-        }
 
-        public void OnRewarded(IRewardItem reward)
-        {
-            Console.WriteLine($"OnRewardedVideoAdOpened {reward.Amount}");
-            DownloadCurrentContent();
-        }
-
-        public void OnRewardedVideoAdClosed()
-        {
-            _downloadVideoAd.LoadAd(_downloadAdId, new AdRequest.Builder().Build());
-            Console.WriteLine("OnRewardedVideoAdOpened");
-        }
-
-        public void OnRewardedVideoAdFailedToLoad(int errorCode)
-        {
-            Console.WriteLine($"OnRewardedVideoAdFailedToLoad ErrorCode: {errorCode}");
-
-            if(errorCode == ErrorCode.ERROR_CODE_NO_FILL)
-            {
-                _useShowAdForDownloading = true;
-            }
-            _downloadVideoAd.LoadAd(_downloadAdId, new AdRequest.Builder().Build());
-        }
-
-        public void OnRewardedVideoAdLeftApplication()
-        {
-            Console.WriteLine("OnRewardedVideoAdLeftApplication");
-        }
-
-        public void OnRewardedVideoAdLoaded()
-        {
-            Console.WriteLine("OnRewardedVideoAdLoaded");
-            _useShowAdForDownloading = false;
-        }
-
-        public void OnRewardedVideoAdOpened()
-        {
-            Console.WriteLine("OnRewardedVideoAdOpened");
-        }
-
-        public void OnRewardedVideoStarted()
-        {
-            Console.WriteLine("OnRewardedVideoStarted");
-        }
-
-        void DownloadVideoViewSaveAudioClicked(object sender, VideoInfo e)
+        async void DownloadVideoViewSaveAudioClicked(object sender, VideoInfo e)
         {
             _isAudioDownloading = true;
             _currentAudioInfo = e;
             HideDownloadVideoView();
-            ShowRewardAd();
+            await ShowRewardAd();
         }
 
-        void DownloadVideoViewSaveVideoClicked(object sender, VideoInfo e)
+        async void DownloadVideoViewSaveVideoClicked(object sender, VideoInfo e)
         {
             _isAudioDownloading = false;
             _currentVideoInfo = e;
             HideDownloadVideoView();
-            ShowRewardAd();
+            await ShowRewardAd();
         }
     }
 }

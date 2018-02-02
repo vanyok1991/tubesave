@@ -7,7 +7,6 @@ using Android.Gms.Ads;
 using Android.OS;
 using Android.Widget;
 using UTubeSave.Droid.Extractor;
-using YoutubeExtractor;
 
 namespace UTubeSave.Droid
 {

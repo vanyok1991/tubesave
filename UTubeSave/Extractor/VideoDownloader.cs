@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using YoutubeExtractor;
 
 namespace UTubeSave.Droid.Extractor
 {

@@ -16,5 +16,10 @@ namespace UTubeSave.Droid.Model
 
             Id = Guid.NewGuid().ToString();
         }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

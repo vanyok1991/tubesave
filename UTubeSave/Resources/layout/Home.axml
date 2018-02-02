@@ -64,4 +64,15 @@
             ads:adSize="BANNER"
             ads:adUnitId="ca-app-pub-6653353220256677/9117978752" />
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/activityBar"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 </RelativeLayout>

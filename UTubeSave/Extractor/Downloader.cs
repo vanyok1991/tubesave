@@ -1,5 +1,4 @@
 ﻿using System;
-using YoutubeExtractor;
 
 namespace UTubeSave.Droid.Extractor
 {
