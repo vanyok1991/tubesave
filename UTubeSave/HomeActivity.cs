@@ -15,6 +15,8 @@ using Android.Webkit;
 using Android.Widget;
 using UTubeSave.AdMob;
 using UTubeSave.Droid.Extractor;
+using UTubeSave.Droid.Helpers;
+using UTubeSave.Droid.Model;
 using UTubeSave.Droid.Views;
 using YoutubeExtractor;
 
@@ -189,7 +191,8 @@ namespace UTubeSave.Droid
                     {
                         _downloadsView.RemoveView(sender as View);
                     });
-                    //TODO save info from e to storage
+                    var video = new Video(e.Video.Title, e.SavePath);
+                    Storage.Instance.SaveVideo(video);
                 };
 
                 _downloadsView.AddView(downloadView);

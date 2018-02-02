@@ -98,6 +98,12 @@
     <Reference Include="Xamarin.Android.Support.Media.Compat">
       <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Media.Compat.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.SecureStorage.Abstractions">
+      <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.0\lib\MonoAndroid10\Plugin.SecureStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.SecureStorage">
+      <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.0\lib\MonoAndroid10\Plugin.SecureStorage.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -121,6 +127,7 @@
     <Compile Include="SavedVideosActivity.cs" />
     <Compile Include="Views\DownloadItemView.cs" />
     <Compile Include="Model\Video.cs" />
+    <Compile Include="Helpers\Storage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -147,6 +154,7 @@
     <Folder Include="Extractor\" />
     <Folder Include="AdMob\" />
     <Folder Include="Model\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
