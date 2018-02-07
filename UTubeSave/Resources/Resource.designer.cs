@@ -480,6 +480,12 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a002c
 			public const int notification_main_column_container = 2131361836;
 			
+			// aapt resource value: 0x7f0a0039
+			public const int playButton = 2131361849;
+			
+			// aapt resource value: 0x7f0a003a
+			public const int removeButton = 2131361850;
+			
 			// aapt resource value: 0x7f0a0015
 			public const int resolutionSpinner = 2131361813;
 			
@@ -632,6 +638,9 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f030013
 			public const int SavedVideos = 2130903059;
 			
+			// aapt resource value: 0x7f030014
+			public const int VideoItem = 2130903060;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -662,6 +671,9 @@ namespace UTubeSave.Droid
 			
 			// aapt resource value: 0x7f050020
 			public const int cannot_download_video = 2131034144;
+			
+			// aapt resource value: 0x7f050022
+			public const int cannot_remove_video = 2131034146;
 			
 			// aapt resource value: 0x7f050001
 			public const int common_google_play_services_enable_button = 2131034113;
@@ -714,6 +726,15 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f050010
 			public const int common_signin_button_text_long = 2131034128;
 			
+			// aapt resource value: 0x7f050026
+			public const int no = 2131034150;
+			
+			// aapt resource value: 0x7f050023
+			public const int remove_video_message = 2131034147;
+			
+			// aapt resource value: 0x7f050024
+			public const int remove_video_title = 2131034148;
+			
 			// aapt resource value: 0x7f050019
 			public const int resolution = 2131034137;
 			
@@ -746,6 +767,9 @@ namespace UTubeSave.Droid
 			
 			// aapt resource value: 0x7f05001a
 			public const int video_type = 2131034138;
+			
+			// aapt resource value: 0x7f050025
+			public const int yes = 2131034149;
 			
 			static String()
 			{

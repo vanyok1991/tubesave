@@ -102,7 +102,7 @@ namespace UTubeSave.Droid
                 DownloadVideo(videoInfo);
             }else
             {
-                Toast.MakeText(this, GetString(Resource.String.cannot_download), ToastLength.Short).Show();
+                Toast.MakeText(this, Resource.String.cannot_download, ToastLength.Short).Show();
             }
         }
 

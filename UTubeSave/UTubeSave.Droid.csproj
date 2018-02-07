@@ -138,6 +138,8 @@
     <Compile Include="Helpers\Advert\RewardAd.cs" />
     <Compile Include="Helpers\Advert\RewardAdStatus.cs" />
     <Compile Include="Helpers\Advert\BetweenPagesAd.cs" />
+    <Compile Include="Views\VideoItemView.cs" />
+    <Compile Include="Adapters\SavedVideosAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -152,6 +154,7 @@
     <AndroidResource Include="Resources\layout\DownloadVideoView.axml" />
     <AndroidResource Include="Resources\layout\SavedVideos.axml" />
     <AndroidResource Include="Resources\layout\DownloadItem.axml" />
+    <AndroidResource Include="Resources\layout\VideoItem.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
@@ -166,6 +169,7 @@
     <Folder Include="Model\" />
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\Advert\" />
+    <Folder Include="Adapters\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />

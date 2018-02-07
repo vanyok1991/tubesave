@@ -11,7 +11,19 @@ namespace UTubeSave.Droid.Helpers
     {
         public static Storage Instance;
 
-        private Storage(){}
+        private Storage(){
+            var videosExist = CrossSecureStorage.Current.HasKey(_videosKey);
+
+            if (videosExist)
+            {
+                var videosString = CrossSecureStorage.Current.GetValue(_videosKey);
+                _videos = JsonConvert.DeserializeObject<List<Video>>(videosString);
+            }
+            else
+            {
+                _videos = new List<Video>();
+            }
+        }
 
         static Storage()
         {
@@ -19,66 +31,37 @@ namespace UTubeSave.Droid.Helpers
         }
 
         const string _videosKey = "SavedVideos";
+        List<Video> _videos;
 
         public void SaveVideo(Video video)
         {
-            List<Video> videos;
-            var videosExist = CrossSecureStorage.Current.HasKey(_videosKey);
+            _videos.Add(video);
 
-            if(videosExist)
-            {
-                var videosString = CrossSecureStorage.Current.GetValue(_videosKey);
-                videos = JsonConvert.DeserializeObject<List<Video>>(videosString);
-            }else
-            {
-                videos = new List<Video>();
-            }
-
-            videos.Add(video);
-
-            var videosJson = JsonConvert.SerializeObject(videos);
+            var videosJson = JsonConvert.SerializeObject(_videos);
             CrossSecureStorage.Current.SetValue(_videosKey, videosJson);
         }
 
         public List<Video> GetSavedVideos()
         {
-            var videosExist = CrossSecureStorage.Current.HasKey(_videosKey);
-
-            if (videosExist)
-            {
-                var videosString = CrossSecureStorage.Current.GetValue(_videosKey);
-                return JsonConvert.DeserializeObject<List<Video>>(videosString);
-            }
-            else
-            {
-                return new List<Video>();
-            }
+            return _videos;
         }
 
-        public void RemoveVideo(Video video)
+        public bool RemoveVideo(Video video)
         {
-            List<Video> videos;
-            var videosExist = CrossSecureStorage.Current.HasKey(_videosKey);
-
-            if (videosExist)
+            if (_videos.Contains(video))
             {
-                var videosString = CrossSecureStorage.Current.GetValue(_videosKey);
-                videos = JsonConvert.DeserializeObject<List<Video>>(videosString);
-
-                if(videos.Contains(video))
+                if (RemoveLocalFile(video.Path))
                 {
-                    if (RemoveLocalFile(video.Path))
-                    {
-                        videos.Remove(video);
+                    _videos.Remove(video);
 
-                        var videosJson = JsonConvert.SerializeObject(videos);
-                        CrossSecureStorage.Current.SetValue(_videosKey, videosJson);
-                    }else
-                    {
-                        throw new Exception("Can not remove local file");
-                    }
+                    var videosJson = JsonConvert.SerializeObject(_videos);
+                    CrossSecureStorage.Current.SetValue(_videosKey, videosJson);
+
+                    return true;
                 }
             }
+
+            return false;
         }
 
         bool RemoveLocalFile(string path)
