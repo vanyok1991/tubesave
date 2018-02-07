@@ -480,11 +480,11 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a002c
 			public const int notification_main_column_container = 2131361836;
 			
-			// aapt resource value: 0x7f0a0039
-			public const int playButton = 2131361849;
-			
 			// aapt resource value: 0x7f0a003a
-			public const int removeButton = 2131361850;
+			public const int playButton = 2131361850;
+			
+			// aapt resource value: 0x7f0a003b
+			public const int removeButton = 2131361851;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int resolutionSpinner = 2131361813;
@@ -536,6 +536,9 @@ namespace UTubeSave.Droid
 			
 			// aapt resource value: 0x7f0a0016
 			public const int videoTypeSpinner = 2131361814;
+			
+			// aapt resource value: 0x7f0a0039
+			public const int videoView = 2131361849;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int webView = 2131361823;

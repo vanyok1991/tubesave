@@ -60,7 +60,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@android:color/holo_orange_light"
             ads:adSize="BANNER"
             ads:adUnitId="ca-app-pub-6653353220256677/9117978752" />
     </LinearLayout>

@@ -6,6 +6,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Gms.Ads;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -20,11 +21,16 @@ namespace UTubeSave.Droid
     public class SavedVideosActivity : Activity
     {
         SavedVideosAdapter _videoAdapter;
+        VideoView _videoView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.SavedVideos);
+
+            var mAdView = FindViewById<AdView>(Resource.Id.adView);
+            Advertistment.Instance.LoadAd(mAdView);
 
             var savedListView = FindViewById<ListView>(Resource.Id.savedVideos);
 
@@ -36,11 +42,14 @@ namespace UTubeSave.Droid
             _videoAdapter.RemoveVideo += SavedVideosAdapterRemoveVideo;
 
             savedListView.Adapter = _videoAdapter;
+
+            _videoView = FindViewById<VideoView>(Resource.Id.videoView);
         }
 
-        void SavedVideosAdapterPlayVideo(object sender, Video e)
+        async void SavedVideosAdapterPlayVideo(object sender, Video e)
         {
-
+            await Advertistment.Instance.ShowBetweenPagesAd(this);
+            PlayVideo(e);
         }
 
         void SavedVideosAdapterRemoveVideo(object sender, Video e)
@@ -68,6 +77,18 @@ namespace UTubeSave.Droid
             {
                 Toast.MakeText(this, Resource.String.cannot_remove_video, ToastLength.Short).Show();
             }
+        }
+
+        void PlayVideo(Video video)
+        {
+            var uri = Android.Net.Uri.Parse(video.Path);
+
+            _videoView.SetVideoURI(uri);
+
+            _videoView.SetMediaController(new MediaController(this));
+
+            _videoView.Visibility = ViewStates.Visible;
+            _videoView.Start();
         }
     }
 }
