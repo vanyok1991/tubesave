@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Android.App;
@@ -157,7 +158,8 @@ namespace UTubeSave.Droid
                     DownloadUrlResolver.DecryptDownloadUrl(videoInfo);
                 }
 
-                var videoDownloader = new VideoDownloader(videoInfo, Path.Combine(ApplicationInfo.DataDir, videoInfo.Title + videoInfo.VideoExtension));
+                var fullFileName = $"{Guid.NewGuid()}{videoInfo.VideoExtension}";
+                var videoDownloader = new VideoDownloader(videoInfo, Path.Combine(ApplicationInfo.DataDir, fullFileName));
 
                 var downloadView = new DownloadItemView(this, videoDownloader);
 
