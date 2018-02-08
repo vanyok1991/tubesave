@@ -140,6 +140,8 @@
     <Compile Include="Helpers\Advert\BetweenPagesAd.cs" />
     <Compile Include="Views\VideoItemView.cs" />
     <Compile Include="Adapters\SavedVideosAdapter.cs" />
+    <Compile Include="PlayerActivity.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -155,6 +157,7 @@
     <AndroidResource Include="Resources\layout\SavedVideos.axml" />
     <AndroidResource Include="Resources\layout\DownloadItem.axml" />
     <AndroidResource Include="Resources\layout\VideoItem.axml" />
+    <AndroidResource Include="Resources\layout\Player.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

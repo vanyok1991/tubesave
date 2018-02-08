@@ -504,8 +504,8 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a001d
 			public const int savedButton = 2131361821;
 			
-			// aapt resource value: 0x7f0a0038
-			public const int savedVideos = 2131361848;
+			// aapt resource value: 0x7f0a0039
+			public const int savedVideos = 2131361849;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int standard = 2131361801;
@@ -537,8 +537,8 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0016
 			public const int videoTypeSpinner = 2131361814;
 			
-			// aapt resource value: 0x7f0a0039
-			public const int videoView = 2131361849;
+			// aapt resource value: 0x7f0a0038
+			public const int videoView = 2131361848;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int webView = 2131361823;
@@ -639,10 +639,13 @@ namespace UTubeSave.Droid
 			public const int notification_template_part_time = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int SavedVideos = 2130903059;
+			public const int Player = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int VideoItem = 2130903060;
+			public const int SavedVideos = 2130903060;
+			
+			// aapt resource value: 0x7f030015
+			public const int VideoItem = 2130903061;
 			
 			static Layout()
 			{

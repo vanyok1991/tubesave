@@ -19,9 +19,4 @@
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-6653353220256677/3291337357" />
-    <VideoView
-        android:id="@+id/videoView"
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </RelativeLayout>
