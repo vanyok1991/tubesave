@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="resolution">Разрешение</string>
+    <string name="video_type">Видео формат</string>
+    <string name="audio_bitrade">Аудио битрейт</string>
+    <string name="audio_type">Аудио формат</string>
+    <string name="save_audio">Сохранить аудио</string>
+    <string name="save_video">Сохранить видео</string>
+
+    <string name="cannot_download">Извините но вы не можете загрузить видео сейчас, повторите попытку позже</string>
+    <string name="cannot_download_video">Извините но вы не можете загрузить видео сейчас, повторите попытку позже</string>
+    <string name="cannot_download_audio">Извините но вы не можете загрузить это видео, пожалуйста, выберите другие параметры</string>
+    <string name="cannot_remove_video">Невозможно удалить это видео</string>
+    
+    <string name="remove_video_message">Вы дейсвительно хотите удалить видео?</string>
+    <string name="remove_video_title">Подтверждение удаления</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+</resources>

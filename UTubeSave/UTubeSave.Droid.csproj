@@ -158,6 +158,8 @@
     <AndroidResource Include="Resources\layout\DownloadItem.axml" />
     <AndroidResource Include="Resources\layout\VideoItem.axml" />
     <AndroidResource Include="Resources\layout\Player.axml" />
+    <AndroidResource Include="Resources\values-ru\Strings.xml" />
+    <AndroidResource Include="Resources\values-uk\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
@@ -173,6 +175,8 @@
     <Folder Include="Helpers\" />
     <Folder Include="Helpers\Advert\" />
     <Folder Include="Adapters\" />
+    <Folder Include="Resources\values-ru\" />
+    <Folder Include="Resources\values-uk\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.7\build\Xamarin.Build.Download.targets')" />
