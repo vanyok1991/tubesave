@@ -6,6 +6,7 @@
     <string name="audio_type">Аудио формат</string>
     <string name="save_audio">Сохранить аудио</string>
     <string name="save_video">Сохранить видео</string>
+    <string name="available">Доступно</string>
 
     <string name="cannot_download">Извините но вы не можете загрузить видео сейчас, повторите попытку позже</string>
     <string name="cannot_download_video">Извините но вы не можете загрузить видео сейчас, повторите попытку позже</string>

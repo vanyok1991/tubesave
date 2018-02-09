@@ -10,6 +10,7 @@ namespace UTubeSave.Droid.Views
     public class DownloadItemView : RelativeLayout
     {
         public event EventHandler<VideoDownloader> DownloadFinished;
+        public event EventHandler ProgressChanged;
 
         public DownloadItemView(Context context, VideoDownloader downloader) :
             base(context)
@@ -42,6 +43,7 @@ namespace UTubeSave.Droid.Views
             downloader.DownloadProgressChanged += (sender, e) => 
             {
                 progressBar.SetProgress((int)e.ProgressPercentage, true);
+                ProgressChanged?.Invoke(this, EventArgs.Empty);
             };
 
             downloader.DownloadFinished += (sender, e) => 

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/contentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -15,15 +14,35 @@
             android:layout_width="match_parent">
             <ImageButton
                 android:id="@+id/updateButton"
+                android:padding="10dp"
                 android:layout_alignParentLeft="true"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_menu_rotate" />
+            <TextView
+                android:id="@+id/titleView"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="title"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="50"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@+id/savedButton"
+                android:layout_toRightOf="@+id/updateButton" />
             <ImageButton
                 android:id="@+id/savedButton"
+                android:padding="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
                 android:src="@android:drawable/ic_menu_save" />
         </RelativeLayout>
         <LinearLayout
@@ -36,33 +55,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/saveButton"
+        android:padding="20dp"
+        android:background="@drawable/selectorcirclebutton"
+        android:textColor="@android:color/white"
+        android:src="@android:drawable/ic_menu_save"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageButton
-                android:id="@+id/saveButton"
-                android:background="@android:color/holo_red_light"
-                android:textColor="@android:color/white"
-                android:src="@android:drawable/ic_menu_save"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_alignParentRight="true" />
-        </RelativeLayout>
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-6653353220256677/9117978752" />
-    </LinearLayout>
+        android:layout_above="@+id/adView"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentRight="true" />
+    <RelativeLayout
+        android:id="@+id/contentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <RelativeLayout
         android:id="@+id/activityBar"
         android:visibility="gone"
@@ -74,4 +82,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-6653353220256677/9117978752" />
 </RelativeLayout>

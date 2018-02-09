@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Gms.Ads;
 using Android.OS;
 using Android.Widget;
@@ -9,7 +10,7 @@ using UTubeSave.Droid.Model;
 
 namespace UTubeSave.Droid
 {
-    [Activity(Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class SavedVideosActivity : Activity
     {
         SavedVideosAdapter _videoAdapter;

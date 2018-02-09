@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Android.App;
+using Android.Content.PM;
 using Android.Gms.Ads;
 using Android.OS;
+using Android.Text.Format;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
@@ -18,7 +19,7 @@ using UTubeSave.Droid.Views;
 
 namespace UTubeSave.Droid
 {
-    [Activity(MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class HomeActivity : Activity
     {
         const string _youtubeHomeUrl = "https://www.youtube.com/?app=desktop&persist_app=1&noapp=1";
@@ -29,6 +30,7 @@ namespace UTubeSave.Droid
         WebView _webView;
         View _activityView;
         ImageButton _saveButton;
+        TextView _titleTextView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,6 +41,7 @@ namespace UTubeSave.Droid
             _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
             _downloadsView = FindViewById<ViewGroup>(Resource.Id.currentDownloads);
             _activityView = FindViewById(Resource.Id.activityBar);
+            _titleTextView = FindViewById<TextView>(Resource.Id.titleView);
 
             var updateButton = FindViewById<ImageButton>(Resource.Id.updateButton);
             updateButton.Click += (sender, e) =>
@@ -66,6 +69,23 @@ namespace UTubeSave.Droid
             _webView.SetWebViewClient(webClient);
             _webView.Settings.JavaScriptEnabled = true;
             _webView.LoadUrl(_youtubeHomeUrl);
+
+            SetFreeSize();
+        }
+
+        private void SetFreeSize()
+        {
+            var stat = new StatFs(ApplicationInfo.DataDir);
+            var blockSize = stat.BlockSizeLong;
+            var availableBlocks = stat.AvailableBlocksLong;
+            var freeSpace = Formatter.FormatFileSize(this, availableBlocks * blockSize);
+
+            var availableText = $"{GetString(Resource.String.available)}: {freeSpace}";
+
+            RunOnUiThread(()=>
+            {
+                _titleTextView.Text = availableText;
+            });
         }
 
         public override void OnBackPressed()
@@ -171,6 +191,11 @@ namespace UTubeSave.Droid
                     });
                     var video = new Video(e.Video.Title, e.SavePath);
                     Storage.Instance.SaveVideo(video);
+                };
+
+                downloadView.ProgressChanged += (sender, e) => 
+                {
+                    SetFreeSize();
                 };
 
                 _downloadsView.AddView(downloadView);

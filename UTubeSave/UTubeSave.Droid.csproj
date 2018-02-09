@@ -101,7 +101,6 @@
     <Reference Include="Plugin.SecureStorage">
       <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.0\lib\MonoAndroid10\Plugin.SecureStorage.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -159,6 +158,9 @@
     <AndroidResource Include="Resources\layout\Player.axml" />
     <AndroidResource Include="Resources\values-ru\Strings.xml" />
     <AndroidResource Include="Resources\values-uk\Strings.xml" />
+    <AndroidResource Include="Resources\drawable\RedCircleWithShadow.axml" />
+    <AndroidResource Include="Resources\drawable\RedCircleWithSmallShadow.axml" />
+    <AndroidResource Include="Resources\drawable\SelectorCircleButton.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />
