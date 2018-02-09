@@ -16,6 +16,7 @@ namespace UTubeSave.Droid
     {
         SavedVideosAdapter _videoAdapter;
         View _noVideosView;
+        View _activityView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,6 +29,7 @@ namespace UTubeSave.Droid
 
             var savedListView = FindViewById<ListView>(Resource.Id.savedVideos);
             _noVideosView = FindViewById(Resource.Id.noVideoView);
+            _activityView = FindViewById(Resource.Id.activityBar);
 
             var savedVideos = Storage.Instance.GetSavedVideos();
             CheckVideosCount(savedVideos?.Count);
@@ -53,7 +55,9 @@ namespace UTubeSave.Droid
 
         async void SavedVideosAdapterPlayVideo(object sender, Video e)
         {
+            _activityView.Visibility = ViewStates.Visible;
             await Advertistment.Instance.ShowBetweenPagesAd(this);
+            _activityView.Visibility = ViewStates.Gone;
 
             var intent = new Intent(this, typeof(PlayerActivity));
             intent.PutExtra(Constants.VideoPath, e.Path);
