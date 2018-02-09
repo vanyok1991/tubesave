@@ -163,13 +163,30 @@
     <AndroidResource Include="Resources\drawable\RedCircleWithShadow.axml" />
     <AndroidResource Include="Resources\drawable\RedCircleWithSmallShadow.axml" />
     <AndroidResource Include="Resources\drawable\SelectorCircleButton.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sync_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sync_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sync_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sync_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sync_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_subscriptions_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_subscriptions_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_subscriptions_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_subscriptions_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_subscriptions_white_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_subscriptions_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_sync_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_subscriptions_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_sync_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_subscriptions_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_sync_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_subscriptions_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_sync_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_subscriptions_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sync_black_36dp.png" />
+    <AndroidResource Include="Resources\drawable\SelectorSyncButton.axml" />
+    <AndroidResource Include="Resources\drawable\SelectorDownloadsButton.axml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\mipmap-hdpi\" />
-    <Folder Include="Resources\mipmap-mdpi\" />
-    <Folder Include="Resources\mipmap-xhdpi\" />
-    <Folder Include="Resources\mipmap-xxhdpi\" />
-    <Folder Include="Resources\mipmap-xxxhdpi\" />
     <Folder Include="Resources\drawable\" />
     <Folder Include="Views\" />
     <Folder Include="Extractor\" />
