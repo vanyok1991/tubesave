@@ -33,6 +33,11 @@ namespace UTubeSave.Droid
             _videoAdapter.PlayVideo += SavedVideosAdapterPlayVideo;
             _videoAdapter.RemoveVideo += SavedVideosAdapterRemoveVideo;
 
+            Storage.Instance.VideosUpdated += (sender, e) =>
+            {
+                _videoAdapter.DataSource = e;
+            };
+
             savedListView.Adapter = _videoAdapter;
         }
 
@@ -62,11 +67,7 @@ namespace UTubeSave.Droid
 
         void RemoveVideo(Video video)
         {
-            if (Storage.Instance.RemoveVideo(video))
-            {
-                _videoAdapter.DataSource = Storage.Instance.GetSavedVideos();
-            }
-            else
+            if (!Storage.Instance.RemoveVideo(video))
             {
                 Toast.MakeText(this, Resource.String.cannot_remove_video, ToastLength.Short).Show();
             }
