@@ -492,6 +492,9 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a002b
 			public const int media_actions = 2131361835;
 			
+			// aapt resource value: 0x7f0a003b
+			public const int noVideoView = 2131361851;
+			
 			// aapt resource value: 0x7f0a0007
 			public const int none = 2131361799;
 			
@@ -507,11 +510,11 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a002d
 			public const int notification_main_column_container = 2131361837;
 			
-			// aapt resource value: 0x7f0a003b
-			public const int playButton = 2131361851;
-			
 			// aapt resource value: 0x7f0a003c
-			public const int removeButton = 2131361852;
+			public const int playButton = 2131361852;
+			
+			// aapt resource value: 0x7f0a003d
+			public const int removeButton = 2131361853;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int resolutionSpinner = 2131361813;
@@ -699,17 +702,17 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f05001f
 			public const int available = 2131034143;
 			
-			// aapt resource value: 0x7f050020
-			public const int cannot_download = 2131034144;
-			
-			// aapt resource value: 0x7f050022
-			public const int cannot_download_audio = 2131034146;
-			
 			// aapt resource value: 0x7f050021
-			public const int cannot_download_video = 2131034145;
+			public const int cannot_download = 2131034145;
 			
 			// aapt resource value: 0x7f050023
-			public const int cannot_remove_video = 2131034147;
+			public const int cannot_download_audio = 2131034147;
+			
+			// aapt resource value: 0x7f050022
+			public const int cannot_download_video = 2131034146;
+			
+			// aapt resource value: 0x7f050024
+			public const int cannot_remove_video = 2131034148;
 			
 			// aapt resource value: 0x7f050001
 			public const int common_google_play_services_enable_button = 2131034113;
@@ -762,17 +765,20 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f050010
 			public const int common_signin_button_text_long = 2131034128;
 			
-			// aapt resource value: 0x7f050028
-			public const int no = 2131034152;
-			
-			// aapt resource value: 0x7f050024
-			public const int no_internet = 2131034148;
+			// aapt resource value: 0x7f05002a
+			public const int no = 2131034154;
 			
 			// aapt resource value: 0x7f050025
-			public const int remove_video_message = 2131034149;
+			public const int no_internet = 2131034149;
 			
 			// aapt resource value: 0x7f050026
-			public const int remove_video_title = 2131034150;
+			public const int no_videos = 2131034150;
+			
+			// aapt resource value: 0x7f050027
+			public const int remove_video_message = 2131034151;
+			
+			// aapt resource value: 0x7f050028
+			public const int remove_video_title = 2131034152;
 			
 			// aapt resource value: 0x7f050019
 			public const int resolution = 2131034137;
@@ -801,14 +807,17 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f05001e
 			public const int save_video = 2131034142;
 			
+			// aapt resource value: 0x7f050020
+			public const int saved_videos = 2131034144;
+			
 			// aapt resource value: 0x7f050017
 			public const int status_bar_notification_info_overflow = 2131034135;
 			
 			// aapt resource value: 0x7f05001a
 			public const int video_type = 2131034138;
 			
-			// aapt resource value: 0x7f050027
-			public const int yes = 2131034151;
+			// aapt resource value: 0x7f050029
+			public const int yes = 2131034153;
 			
 			static String()
 			{

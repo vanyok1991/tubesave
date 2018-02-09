@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.Gms.Ads;
 using Android.OS;
+using Android.Views;
 using Android.Widget;
 using UTubeSave.Droid.Adapters;
 using UTubeSave.Droid.Helpers;
@@ -14,6 +15,7 @@ namespace UTubeSave.Droid
     public class SavedVideosActivity : Activity
     {
         SavedVideosAdapter _videoAdapter;
+        View _noVideosView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,8 +27,10 @@ namespace UTubeSave.Droid
             Advertistment.Instance.LoadAd(mAdView);
 
             var savedListView = FindViewById<ListView>(Resource.Id.savedVideos);
+            _noVideosView = FindViewById(Resource.Id.noVideoView);
 
             var savedVideos = Storage.Instance.GetSavedVideos();
+            CheckVideosCount(savedVideos?.Count);
 
             _videoAdapter = new SavedVideosAdapter(this, savedVideos);
 
@@ -36,9 +40,15 @@ namespace UTubeSave.Droid
             Storage.Instance.VideosUpdated += (sender, e) =>
             {
                 _videoAdapter.DataSource = e;
+                CheckVideosCount(e?.Count);
             };
 
             savedListView.Adapter = _videoAdapter;
+        }
+
+        void CheckVideosCount(int? count)
+        {
+            _noVideosView.Visibility = count > 0 ? ViewStates.Gone : ViewStates.Visible;
         }
 
         async void SavedVideosAdapterPlayVideo(object sender, Video e)

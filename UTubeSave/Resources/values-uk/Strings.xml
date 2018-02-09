@@ -7,12 +7,14 @@
     <string name="save_audio">Зберегти аудіо</string>
     <string name="save_video">Зберегти відео</string>
     <string name="available">Доступно</string>
+    <string name="saved_videos">Збережені відео</string>
 
     <string name="cannot_download">Вибачте, але ви не можете завантажити відео зараз, будь-ласка спробуйте пізніше</string>
     <string name="cannot_download_video">Вибачте, але ви не можете завантажити відео зараз, будь-ласка спробуйте пізніше</string>
     <string name="cannot_download_audio">Вибачте, але ви не можете завантажити це відео, будь-ласка, віберіть інші параметри</string>
     <string name="cannot_remove_video">Неможливо видалити це відео</string>
     <string name="no_internet">Немає доступу до мережі Інтернет, будь-ласка, увікніть та спробуйте перезавантажити сторінку, або перейдіть до завантажень</string>
+    <string name="no_videos">У Вас немає збережених відео</string>
     
     <string name="remove_video_message">Ви дійсно хочете видалити відео?</string>
     <string name="remove_video_title">Підтвердження видалення</string>
