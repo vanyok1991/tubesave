@@ -13,6 +13,7 @@
     <string name="cannot_download_video">Sorry, you can\'t download video at this time, please try later</string>
     <string name="cannot_download_audio">Sorry, you can\'t download this video, please, choose another parameters</string>
     <string name="cannot_remove_video">Can not remove video in some reason</string>
+    <string name="no_internet">Network is not availabe, please, enable and try to reload page, or go to downloads</string>
     
     <string name="remove_video_message">Do you want to remove video?</string>
     <string name="remove_video_title">Confirm delete</string>

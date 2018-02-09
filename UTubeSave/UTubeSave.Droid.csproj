@@ -142,6 +142,7 @@
     <Compile Include="PlayerActivity.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Model\VideoStatus.cs" />
+    <Compile Include="Helpers\SystemInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

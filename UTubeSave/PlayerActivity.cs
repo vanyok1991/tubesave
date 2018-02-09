@@ -6,7 +6,7 @@ using Android.Widget;
 
 namespace UTubeSave.Droid
 {
-    [Activity(Theme = "@android:style/Theme.NoTitleBar", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar.Fullscreen", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class PlayerActivity : Activity
     {
         VideoView _videoView;

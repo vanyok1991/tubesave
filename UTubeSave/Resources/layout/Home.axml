@@ -53,7 +53,22 @@
         <android.webkit.WebView
             android:id="@+id/webView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/availabilityView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="50"
+                android:background="@color/notification_icon_bg_color"
+                android:textColor="@android:color/white"
+                android:text="@string/no_internet" />
+        </android.webkit.WebView>
     </LinearLayout>
     <ImageButton
         android:id="@+id/saveButton"
@@ -77,6 +92,12 @@
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/contentView"
+            android:background="@android:color/black"
+            android:alpha="0.4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
         <ProgressBar
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"

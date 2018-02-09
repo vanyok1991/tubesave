@@ -10,7 +10,7 @@ using UTubeSave.Droid.Model;
 
 namespace UTubeSave.Droid
 {
-    [Activity(Theme = "@android:style/Theme.NoTitleBar", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+    [Activity(Theme = "@android:style/Theme.NoTitleBar.Fullscreen", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class SavedVideosActivity : Activity
     {
         SavedVideosAdapter _videoAdapter;

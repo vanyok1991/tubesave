@@ -12,6 +12,7 @@
     <string name="cannot_download_video">Вибачте, але ви не можете завантажити відео зараз, будь-ласка спробуйте пізніше</string>
     <string name="cannot_download_audio">Вибачте, але ви не можете завантажити це відео, будь-ласка, віберіть інші параметри</string>
     <string name="cannot_remove_video">Неможливо видалити це відео</string>
+    <string name="no_internet">Немає доступу до мережі Інтернет, будь-ласка, увікніть та спробуйте перезавантажити сторінку, або перейдіть до завантажень</string>
     
     <string name="remove_video_message">Ви дійсно хочете видалити відео?</string>
     <string name="remove_video_title">Підтвердження видалення</string>

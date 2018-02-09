@@ -12,6 +12,7 @@
     <string name="cannot_download_video">Извините но вы не можете загрузить видео сейчас, повторите попытку позже</string>
     <string name="cannot_download_audio">Извините но вы не можете загрузить это видео, пожалуйста, выберите другие параметры</string>
     <string name="cannot_remove_video">Невозможно удалить это видео</string>
+    <string name="no_internet">Нет доступа к сети Интернет, пожалуйста, включите и попытайтесь перезагрузить страницу, или перейдите в загрузки</string>
     
     <string name="remove_video_message">Вы дейсвительно хотите удалить видео?</string>
     <string name="remove_video_title">Подтверждение удаления</string>

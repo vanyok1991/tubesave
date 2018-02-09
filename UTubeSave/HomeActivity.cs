@@ -8,7 +8,6 @@ using Android.App;
 using Android.Content.PM;
 using Android.Gms.Ads;
 using Android.OS;
-using Android.Text.Format;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
@@ -19,7 +18,7 @@ using UTubeSave.Droid.Views;
 
 namespace UTubeSave.Droid
 {
-    [Activity(MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+    [Activity(MainLauncher = true, Theme = "@android:style/Theme.NoTitleBar.Fullscreen", ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class HomeActivity : Activity
     {
         const string _youtubeHomeUrl = "https://www.youtube.com/?app=desktop&persist_app=1&noapp=1";
@@ -29,6 +28,7 @@ namespace UTubeSave.Droid
         ViewGroup _downloadsView;
         WebView _webView;
         View _activityView;
+        View _availabilityView;
         ImageButton _saveButton;
         TextView _titleTextView;
 
@@ -41,11 +41,13 @@ namespace UTubeSave.Droid
             _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
             _downloadsView = FindViewById<ViewGroup>(Resource.Id.currentDownloads);
             _activityView = FindViewById(Resource.Id.activityBar);
+            _availabilityView = FindViewById(Resource.Id.availabilityView);
             _titleTextView = FindViewById<TextView>(Resource.Id.titleView);
 
             var updateButton = FindViewById<ImageButton>(Resource.Id.updateButton);
             updateButton.Click += (sender, e) =>
             {
+                CheckNetwork();
                 _webView?.Reload();
             };
 
@@ -69,17 +71,33 @@ namespace UTubeSave.Droid
             _webView.SetWebViewClient(webClient);
             _webView.Settings.JavaScriptEnabled = true;
             _webView.LoadUrl(_youtubeHomeUrl);
+        }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            CheckNetwork();
             SetFreeSize();
         }
 
-        private void SetFreeSize()
+        void CheckNetwork()
         {
-            var stat = new StatFs(ApplicationInfo.DataDir);
-            var blockSize = stat.BlockSizeLong;
-            var availableBlocks = stat.AvailableBlocksLong;
-            var freeSpace = Formatter.FormatFileSize(this, availableBlocks * blockSize);
+            if (SystemInfo.IsNetworkAvailable(this))
+            {
+                _availabilityView.Visibility = ViewStates.Gone;
+                _saveButton.Visibility = ViewStates.Visible;
+            }
+            else
+            {
+                _availabilityView.Visibility = ViewStates.Visible;
+                _saveButton.Visibility = ViewStates.Gone;
+            }
+        }
 
+        void SetFreeSize()
+        {
+            var freeSpace = SystemInfo.GetFreeSpace(this);
             var availableText = $"{GetString(Resource.String.available)}: {freeSpace}";
 
             RunOnUiThread(()=>
