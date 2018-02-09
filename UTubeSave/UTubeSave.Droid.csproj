@@ -141,6 +141,7 @@
     <Compile Include="Adapters\SavedVideosAdapter.cs" />
     <Compile Include="PlayerActivity.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Model\VideoStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

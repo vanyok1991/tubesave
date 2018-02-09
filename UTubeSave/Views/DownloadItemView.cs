@@ -4,33 +4,34 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using UTubeSave.Droid.Extractor;
+using UTubeSave.Droid.Model;
 
 namespace UTubeSave.Droid.Views
 {
     public class DownloadItemView : RelativeLayout
     {
-        public event EventHandler<VideoDownloader> DownloadFinished;
-        public event EventHandler ProgressChanged;
+        public event EventHandler<Video> DownloadFinished;
+        public event EventHandler<Video> ProgressChanged;
 
-        public DownloadItemView(Context context, VideoDownloader downloader) :
+        public DownloadItemView(Context context, VideoDownloader downloader, Video video) :
             base(context)
         {
-            Initialize(downloader);
+            Initialize(downloader, video);
         }
 
-        public DownloadItemView(Context context, IAttributeSet attrs, VideoDownloader downloader) :
+        public DownloadItemView(Context context, IAttributeSet attrs, VideoDownloader downloader, Video video) :
             base(context, attrs)
         {
-            Initialize(downloader);
+            Initialize(downloader, video);
         }
 
-        public DownloadItemView(Context context, IAttributeSet attrs, int defStyle, VideoDownloader downloader) :
+        public DownloadItemView(Context context, IAttributeSet attrs, int defStyle, VideoDownloader downloader, Video video) :
             base(context, attrs, defStyle)
         {
-            Initialize(downloader);
+            Initialize(downloader, video);
         }
 
-        void Initialize(VideoDownloader downloader)
+        void Initialize(VideoDownloader downloader, Video video)
         {
             var inflater = (LayoutInflater)this.Context.GetSystemService(Context.LayoutInflaterService);
             var view = inflater.Inflate(Resource.Layout.DownloadItem, this, true);
@@ -43,12 +44,12 @@ namespace UTubeSave.Droid.Views
             downloader.DownloadProgressChanged += (sender, e) => 
             {
                 progressBar.SetProgress((int)e.ProgressPercentage, true);
-                ProgressChanged?.Invoke(this, EventArgs.Empty);
+                ProgressChanged?.Invoke(this, video);
             };
 
             downloader.DownloadFinished += (sender, e) => 
             {
-                DownloadFinished?.Invoke(this, downloader);
+                DownloadFinished?.Invoke(this, video);
             };
         }
     }

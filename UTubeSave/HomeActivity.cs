@@ -181,7 +181,10 @@ namespace UTubeSave.Droid
                 var fullFileName = $"{Guid.NewGuid()}{videoInfo.VideoExtension}";
                 var videoDownloader = new VideoDownloader(videoInfo, Path.Combine(ApplicationInfo.DataDir, fullFileName));
 
-                var downloadView = new DownloadItemView(this, videoDownloader);
+                var video = new Video(videoInfo.Title, videoDownloader.SavePath);
+                Storage.Instance.SaveVideo(video);
+
+                var downloadView = new DownloadItemView(this, videoDownloader, video);
 
                 downloadView.DownloadFinished += (sender, e) => 
                 {
@@ -189,13 +192,21 @@ namespace UTubeSave.Droid
                     {
                         _downloadsView.RemoveView(sender as View);
                     });
-                    var video = new Video(e.Video.Title, e.SavePath);
-                    Storage.Instance.SaveVideo(video);
+
+                    if (e.TrySetFinishedStatus())
+                    {
+                        Storage.Instance.SaveVideos();
+                    }
                 };
 
                 downloadView.ProgressChanged += (sender, e) => 
                 {
                     SetFreeSize();
+
+                    if (e.TrySetInProgressStatus())
+                    {
+                        Storage.Instance.SaveVideos();
+                    }
                 };
 
                 _downloadsView.AddView(downloadView);
@@ -220,52 +231,6 @@ namespace UTubeSave.Droid
             {
                 Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
                 Console.WriteLine($"DownloadVideo {ex.Message}");
-            }
-        }
-
-        void DownloadAudio(VideoInfo audioInfo)
-        {
-            try
-            {
-                if (audioInfo.RequiresDecryption)
-                {
-                    DownloadUrlResolver.DecryptDownloadUrl(audioInfo);
-                }
-
-                var audioDownloader = new AudioDownloader(audioInfo, Path.Combine(ApplicationInfo.DataDir, audioInfo.Title + audioInfo.AudioExtension));
-
-                audioDownloader.DownloadProgressChanged += (sender, e) =>
-                {
-                    Console.WriteLine(e.ProgressPercentage);
-                };
-
-                audioDownloader.AudioExtractionProgressChanged += (sender, e) => 
-                {
-                    Console.WriteLine(e.ProgressPercentage);
-                };
-
-                var thread = new Thread(() =>
-                {
-                    try
-                    {
-                        audioDownloader.Execute();
-                    }
-                    catch (Exception ex)
-                    {
-                        RunOnUiThread(() =>
-                        {
-                            Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
-                        });
-                    }
-                });
-
-                thread.Start();
-
-            }
-            catch (Exception ex)
-            {
-                Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
-                Console.WriteLine($"DownloadAudio {ex.Message}");
             }
         }
 

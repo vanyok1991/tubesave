@@ -30,6 +30,7 @@ namespace UTubeSave.Droid.Helpers
             Instance = new Storage();
         }
 
+        public event EventHandler<List<Video>> VideosUpdated;
         const string _videosKey = "SavedVideos";
         List<Video> _videos;
 
@@ -37,8 +38,7 @@ namespace UTubeSave.Droid.Helpers
         {
             _videos.Add(video);
 
-            var videosJson = JsonConvert.SerializeObject(_videos);
-            CrossSecureStorage.Current.SetValue(_videosKey, videosJson);
+            SaveVideos();
         }
 
         public List<Video> GetSavedVideos()
@@ -54,14 +54,21 @@ namespace UTubeSave.Droid.Helpers
                 {
                     _videos.Remove(video);
 
-                    var videosJson = JsonConvert.SerializeObject(_videos);
-                    CrossSecureStorage.Current.SetValue(_videosKey, videosJson);
+                    SaveVideos();
 
                     return true;
                 }
             }
 
             return false;
+        }
+
+        public void SaveVideos()
+        {
+            var videosJson = JsonConvert.SerializeObject(_videos);
+            CrossSecureStorage.Current.SetValue(_videosKey, videosJson);
+
+            VideosUpdated?.Invoke(this, _videos);
         }
 
         bool RemoveLocalFile(string path)
