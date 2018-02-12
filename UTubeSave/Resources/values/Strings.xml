@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">UTubeSave</string>
+	<string name="app_name">UTubeSaver</string>
     <string name="resolution">Resolution</string>
     <string name="video_type">Video Type</string>
     <string name="audio_bitrade">Audio Bitrade</string>
