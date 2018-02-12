@@ -26,6 +26,140 @@ namespace UTubeSave.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::HockeyApp.Resource.Color.hockeyapp_background_header = global::UTubeSave.Droid.Resource.Color.hockeyapp_background_header;
+			global::HockeyApp.Resource.Color.hockeyapp_background_light = global::UTubeSave.Droid.Resource.Color.hockeyapp_background_light;
+			global::HockeyApp.Resource.Color.hockeyapp_background_white = global::UTubeSave.Droid.Resource.Color.hockeyapp_background_white;
+			global::HockeyApp.Resource.Color.hockeyapp_button_background = global::UTubeSave.Droid.Resource.Color.hockeyapp_button_background;
+			global::HockeyApp.Resource.Color.hockeyapp_button_background_pressed = global::UTubeSave.Droid.Resource.Color.hockeyapp_button_background_pressed;
+			global::HockeyApp.Resource.Color.hockeyapp_button_background_selected = global::UTubeSave.Droid.Resource.Color.hockeyapp_button_background_selected;
+			global::HockeyApp.Resource.Color.hockeyapp_text_black = global::UTubeSave.Droid.Resource.Color.hockeyapp_text_black;
+			global::HockeyApp.Resource.Color.hockeyapp_text_light = global::UTubeSave.Droid.Resource.Color.hockeyapp_text_light;
+			global::HockeyApp.Resource.Color.hockeyapp_text_normal = global::UTubeSave.Droid.Resource.Color.hockeyapp_text_normal;
+			global::HockeyApp.Resource.Color.hockeyapp_text_white = global::UTubeSave.Droid.Resource.Color.hockeyapp_text_white;
+			global::HockeyApp.Resource.Drawable.hockeyapp_btn_background = global::UTubeSave.Droid.Resource.Drawable.hockeyapp_btn_background;
+			global::HockeyApp.Resource.Id.button_add_response = global::UTubeSave.Droid.Resource.Id.button_add_response;
+			global::HockeyApp.Resource.Id.button_attachment = global::UTubeSave.Droid.Resource.Id.button_attachment;
+			global::HockeyApp.Resource.Id.button_login = global::UTubeSave.Droid.Resource.Id.button_login;
+			global::HockeyApp.Resource.Id.button_refresh = global::UTubeSave.Droid.Resource.Id.button_refresh;
+			global::HockeyApp.Resource.Id.button_send = global::UTubeSave.Droid.Resource.Id.button_send;
+			global::HockeyApp.Resource.Id.button_update = global::UTubeSave.Droid.Resource.Id.button_update;
+			global::HockeyApp.Resource.Id.input_email = global::UTubeSave.Droid.Resource.Id.input_email;
+			global::HockeyApp.Resource.Id.input_message = global::UTubeSave.Droid.Resource.Id.input_message;
+			global::HockeyApp.Resource.Id.input_name = global::UTubeSave.Droid.Resource.Id.input_name;
+			global::HockeyApp.Resource.Id.input_password = global::UTubeSave.Droid.Resource.Id.input_password;
+			global::HockeyApp.Resource.Id.input_subject = global::UTubeSave.Droid.Resource.Id.input_subject;
+			global::HockeyApp.Resource.Id.label_author = global::UTubeSave.Droid.Resource.Id.label_author;
+			global::HockeyApp.Resource.Id.label_date = global::UTubeSave.Droid.Resource.Id.label_date;
+			global::HockeyApp.Resource.Id.label_last_updated = global::UTubeSave.Droid.Resource.Id.label_last_updated;
+			global::HockeyApp.Resource.Id.label_message = global::UTubeSave.Droid.Resource.Id.label_message;
+			global::HockeyApp.Resource.Id.label_text = global::UTubeSave.Droid.Resource.Id.label_text;
+			global::HockeyApp.Resource.Id.label_title = global::UTubeSave.Droid.Resource.Id.label_title;
+			global::HockeyApp.Resource.Id.label_version = global::UTubeSave.Droid.Resource.Id.label_version;
+			global::HockeyApp.Resource.Id.list_attachments = global::UTubeSave.Droid.Resource.Id.list_attachments;
+			global::HockeyApp.Resource.Id.list_feedback_messages = global::UTubeSave.Droid.Resource.Id.list_feedback_messages;
+			global::HockeyApp.Resource.Id.text_headline = global::UTubeSave.Droid.Resource.Id.text_headline;
+			global::HockeyApp.Resource.Id.view_header = global::UTubeSave.Droid.Resource.Id.view_header;
+			global::HockeyApp.Resource.Id.web_update_details = global::UTubeSave.Droid.Resource.Id.web_update_details;
+			global::HockeyApp.Resource.Id.wrapper_attachments = global::UTubeSave.Droid.Resource.Id.wrapper_attachments;
+			global::HockeyApp.Resource.Id.wrapper_feedback = global::UTubeSave.Droid.Resource.Id.wrapper_feedback;
+			global::HockeyApp.Resource.Id.wrapper_feedback_scroll = global::UTubeSave.Droid.Resource.Id.wrapper_feedback_scroll;
+			global::HockeyApp.Resource.Id.wrapper_messages = global::UTubeSave.Droid.Resource.Id.wrapper_messages;
+			global::HockeyApp.Resource.Id.wrapper_messages_buttons = global::UTubeSave.Droid.Resource.Id.wrapper_messages_buttons;
+			global::HockeyApp.Resource.Layout.hockeyapp_activity_expiry_info = global::UTubeSave.Droid.Resource.Layout.hockeyapp_activity_expiry_info;
+			global::HockeyApp.Resource.Layout.hockeyapp_activity_feedback = global::UTubeSave.Droid.Resource.Layout.hockeyapp_activity_feedback;
+			global::HockeyApp.Resource.Layout.hockeyapp_activity_login = global::UTubeSave.Droid.Resource.Layout.hockeyapp_activity_login;
+			global::HockeyApp.Resource.Layout.hockeyapp_fragment_update = global::UTubeSave.Droid.Resource.Layout.hockeyapp_fragment_update;
+			global::HockeyApp.Resource.Layout.hockeyapp_view_feedback_message = global::UTubeSave.Droid.Resource.Layout.hockeyapp_view_feedback_message;
+			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_app_name_fallback = global::UTubeSave.Droid.Resource.String.hockeyapp_crash_dialog_app_name_fallback;
+			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_message = global::UTubeSave.Droid.Resource.String.hockeyapp_crash_dialog_message;
+			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_negative_button = global::UTubeSave.Droid.Resource.String.hockeyapp_crash_dialog_negative_button;
+			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_neutral_button = global::UTubeSave.Droid.Resource.String.hockeyapp_crash_dialog_neutral_button;
+			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_positive_button = global::UTubeSave.Droid.Resource.String.hockeyapp_crash_dialog_positive_button;
+			global::HockeyApp.Resource.String.hockeyapp_crash_dialog_title = global::UTubeSave.Droid.Resource.String.hockeyapp_crash_dialog_title;
+			global::HockeyApp.Resource.String.hockeyapp_dialog_error_message = global::UTubeSave.Droid.Resource.String.hockeyapp_dialog_error_message;
+			global::HockeyApp.Resource.String.hockeyapp_dialog_error_title = global::UTubeSave.Droid.Resource.String.hockeyapp_dialog_error_title;
+			global::HockeyApp.Resource.String.hockeyapp_dialog_positive_button = global::UTubeSave.Droid.Resource.String.hockeyapp_dialog_positive_button;
+			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_message = global::UTubeSave.Droid.Resource.String.hockeyapp_download_failed_dialog_message;
+			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_negative_button = global::UTubeSave.Droid.Resource.String.hockeyapp_download_failed_dialog_negative_button;
+			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_positive_button = global::UTubeSave.Droid.Resource.String.hockeyapp_download_failed_dialog_positive_button;
+			global::HockeyApp.Resource.String.hockeyapp_download_failed_dialog_title = global::UTubeSave.Droid.Resource.String.hockeyapp_download_failed_dialog_title;
+			global::HockeyApp.Resource.String.hockeyapp_error_install_form_unknown_sources_disabled = global::UTubeSave.Droid.Resource.String.hockeyapp_error_install_form_unknown_sources_disabled;
+			global::HockeyApp.Resource.String.hockeyapp_error_no_external_storage_permission = global::UTubeSave.Droid.Resource.String.hockeyapp_error_no_external_storage_permission;
+			global::HockeyApp.Resource.String.hockeyapp_error_no_network_message = global::UTubeSave.Droid.Resource.String.hockeyapp_error_no_network_message;
+			global::HockeyApp.Resource.String.hockeyapp_expiry_info_text = global::UTubeSave.Droid.Resource.String.hockeyapp_expiry_info_text;
+			global::HockeyApp.Resource.String.hockeyapp_expiry_info_title = global::UTubeSave.Droid.Resource.String.hockeyapp_expiry_info_title;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attach_file = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attach_file;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attach_picture = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attach_picture;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_added = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attachment_added;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_button_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attachment_button_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attachment_error;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_loading = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attachment_loading;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_remove_description = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attachment_remove_description;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_attachment_removed = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_attachment_removed;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_email_hint = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_email_hint;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_email_hint_required = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_email_hint_required;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_fetching_feedback_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_fetching_feedback_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_last_updated_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_last_updated_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_max_attachments_allowed = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_max_attachments_allowed;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_message_hint = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_message_hint;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_message_hint_required = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_message_hint_required;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_name_hint = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_name_hint;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_name_hint_required = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_name_hint_required;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_new_answer_notification_message = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_new_answer_notification_message;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_notification_channel = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_notification_channel;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_notification_title = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_notification_title;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_refresh_button_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_refresh_button_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_response_button_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_response_button_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_screenshot_fail = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_screenshot_fail;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_screenshot_notification_message = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_screenshot_notification_message;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_select_file = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_select_file;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_select_picture = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_select_picture;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_send_button_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_send_button_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_send_generic_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_send_generic_error;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_send_network_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_send_network_error;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_sending_feedback_text = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_sending_feedback_text;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_sent_toast = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_sent_toast;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_subject_hint = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_subject_hint;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_subject_hint_required = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_subject_hint_required;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_title = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_title;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_email_empty = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_validate_email_empty;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_email_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_validate_email_error;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_name_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_validate_name_error;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_subject_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_validate_subject_error;
+			global::HockeyApp.Resource.String.hockeyapp_feedback_validate_text_error = global::UTubeSave.Droid.Resource.String.hockeyapp_feedback_validate_text_error;
+			global::HockeyApp.Resource.String.hockeyapp_login_email_hint_required = global::UTubeSave.Droid.Resource.String.hockeyapp_login_email_hint_required;
+			global::HockeyApp.Resource.String.hockeyapp_login_headline_text = global::UTubeSave.Droid.Resource.String.hockeyapp_login_headline_text;
+			global::HockeyApp.Resource.String.hockeyapp_login_headline_text_email_only = global::UTubeSave.Droid.Resource.String.hockeyapp_login_headline_text_email_only;
+			global::HockeyApp.Resource.String.hockeyapp_login_login_button_text = global::UTubeSave.Droid.Resource.String.hockeyapp_login_login_button_text;
+			global::HockeyApp.Resource.String.hockeyapp_login_missing_credentials_toast = global::UTubeSave.Droid.Resource.String.hockeyapp_login_missing_credentials_toast;
+			global::HockeyApp.Resource.String.hockeyapp_login_password_hint_required = global::UTubeSave.Droid.Resource.String.hockeyapp_login_password_hint_required;
+			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_message = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_dialog_message;
+			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_negative_button = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_dialog_negative_button;
+			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_neutral_button = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_dialog_neutral_button;
+			global::HockeyApp.Resource.String.hockeyapp_paint_dialog_positive_button = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_dialog_positive_button;
+			global::HockeyApp.Resource.String.hockeyapp_paint_indicator_toast = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_indicator_toast;
+			global::HockeyApp.Resource.String.hockeyapp_paint_menu_clear = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_menu_clear;
+			global::HockeyApp.Resource.String.hockeyapp_paint_menu_save = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_menu_save;
+			global::HockeyApp.Resource.String.hockeyapp_paint_menu_undo = global::UTubeSave.Droid.Resource.String.hockeyapp_paint_menu_undo;
+			global::HockeyApp.Resource.String.hockeyapp_update_already_installed = global::UTubeSave.Droid.Resource.String.hockeyapp_update_already_installed;
+			global::HockeyApp.Resource.String.hockeyapp_update_button = global::UTubeSave.Droid.Resource.String.hockeyapp_update_button;
+			global::HockeyApp.Resource.String.hockeyapp_update_dialog_message = global::UTubeSave.Droid.Resource.String.hockeyapp_update_dialog_message;
+			global::HockeyApp.Resource.String.hockeyapp_update_dialog_negative_button = global::UTubeSave.Droid.Resource.String.hockeyapp_update_dialog_negative_button;
+			global::HockeyApp.Resource.String.hockeyapp_update_dialog_positive_button = global::UTubeSave.Droid.Resource.String.hockeyapp_update_dialog_positive_button;
+			global::HockeyApp.Resource.String.hockeyapp_update_dialog_title = global::UTubeSave.Droid.Resource.String.hockeyapp_update_dialog_title;
+			global::HockeyApp.Resource.String.hockeyapp_update_loading = global::UTubeSave.Droid.Resource.String.hockeyapp_update_loading;
+			global::HockeyApp.Resource.String.hockeyapp_update_mandatory_toast = global::UTubeSave.Droid.Resource.String.hockeyapp_update_mandatory_toast;
+			global::HockeyApp.Resource.String.hockeyapp_update_newest_version = global::UTubeSave.Droid.Resource.String.hockeyapp_update_newest_version;
+			global::HockeyApp.Resource.String.hockeyapp_update_no_info = global::UTubeSave.Droid.Resource.String.hockeyapp_update_no_info;
+			global::HockeyApp.Resource.String.hockeyapp_update_restore = global::UTubeSave.Droid.Resource.String.hockeyapp_update_restore;
+			global::HockeyApp.Resource.String.hockeyapp_update_title = global::UTubeSave.Droid.Resource.String.hockeyapp_update_title;
+			global::HockeyApp.Resource.String.hockeyapp_update_unknown_size = global::UTubeSave.Droid.Resource.String.hockeyapp_update_unknown_size;
+			global::HockeyApp.Resource.String.hockeyapp_update_version = global::UTubeSave.Droid.Resource.String.hockeyapp_update_version;
+			global::HockeyApp.Resource.String.hockeyapp_update_version_details_label = global::UTubeSave.Droid.Resource.String.hockeyapp_update_version_details_label;
+			global::HockeyApp.Resource.String.library_name = global::UTubeSave.Droid.Resource.String.library_name;
+			global::HockeyApp.Resource.Style.HockeyApp_ButtonStyle = global::UTubeSave.Droid.Resource.Style.HockeyApp_ButtonStyle;
+			global::HockeyApp.Resource.Style.HockeyApp_EditTextStyle = global::UTubeSave.Droid.Resource.Style.HockeyApp_EditTextStyle;
+			global::HockeyApp.Resource.Style.HockeyApp_SingleLineInputStyle = global::UTubeSave.Droid.Resource.Style.HockeyApp_SingleLineInputStyle;
 		}
 		
 		public partial class Attribute
@@ -114,8 +248,8 @@ namespace UTubeSave.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f06000f
-			public const int common_google_signin_btn_text_dark = 2131099663;
+			// aapt resource value: 0x7f060019
+			public const int common_google_signin_btn_text_dark = 2131099673;
 			
 			// aapt resource value: 0x7f060000
 			public const int common_google_signin_btn_text_dark_default = 2131099648;
@@ -129,8 +263,8 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f060003
 			public const int common_google_signin_btn_text_dark_pressed = 2131099651;
 			
-			// aapt resource value: 0x7f060010
-			public const int common_google_signin_btn_text_light = 2131099664;
+			// aapt resource value: 0x7f06001a
+			public const int common_google_signin_btn_text_light = 2131099674;
 			
 			// aapt resource value: 0x7f060004
 			public const int common_google_signin_btn_text_light_default = 2131099652;
@@ -144,8 +278,38 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f060007
 			public const int common_google_signin_btn_text_light_pressed = 2131099655;
 			
+			// aapt resource value: 0x7f06001b
+			public const int common_google_signin_btn_tint = 2131099675;
+			
+			// aapt resource value: 0x7f06000f
+			public const int hockeyapp_background_header = 2131099663;
+			
+			// aapt resource value: 0x7f060010
+			public const int hockeyapp_background_light = 2131099664;
+			
 			// aapt resource value: 0x7f060011
-			public const int common_google_signin_btn_tint = 2131099665;
+			public const int hockeyapp_background_white = 2131099665;
+			
+			// aapt resource value: 0x7f060012
+			public const int hockeyapp_button_background = 2131099666;
+			
+			// aapt resource value: 0x7f060013
+			public const int hockeyapp_button_background_pressed = 2131099667;
+			
+			// aapt resource value: 0x7f060014
+			public const int hockeyapp_button_background_selected = 2131099668;
+			
+			// aapt resource value: 0x7f060015
+			public const int hockeyapp_text_black = 2131099669;
+			
+			// aapt resource value: 0x7f060016
+			public const int hockeyapp_text_light = 2131099670;
+			
+			// aapt resource value: 0x7f060017
+			public const int hockeyapp_text_normal = 2131099671;
+			
+			// aapt resource value: 0x7f060018
+			public const int hockeyapp_text_white = 2131099672;
 			
 			// aapt resource value: 0x7f06000b
 			public const int notification_action_color_filter = 2131099659;
@@ -318,67 +482,70 @@ namespace UTubeSave.Droid
 			public const int googleg_standard_color_18 = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int ic_subscriptions_black_36dp = 2130837525;
+			public const int hockeyapp_btn_background = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int ic_subscriptions_white_36dp = 2130837526;
+			public const int ic_subscriptions_black_36dp = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int ic_sync_black_36dp = 2130837527;
+			public const int ic_subscriptions_white_36dp = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int ic_sync_white_36dp = 2130837528;
+			public const int ic_sync_black_36dp = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int notification_action_background = 2130837529;
+			public const int ic_sync_white_36dp = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int notification_bg = 2130837530;
+			public const int notification_action_background = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int notification_bg_low = 2130837531;
+			public const int notification_bg = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int notification_bg_low_normal = 2130837532;
+			public const int notification_bg_low = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int notification_bg_low_pressed = 2130837533;
+			public const int notification_bg_low_normal = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int notification_bg_normal = 2130837534;
+			public const int notification_bg_low_pressed = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int notification_bg_normal_pressed = 2130837535;
+			public const int notification_bg_normal = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int notification_icon_background = 2130837536;
-			
-			// aapt resource value: 0x7f020028
-			public const int notification_template_icon_bg = 2130837544;
-			
-			// aapt resource value: 0x7f020029
-			public const int notification_template_icon_low_bg = 2130837545;
+			public const int notification_bg_normal_pressed = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int notification_tile_bg = 2130837537;
+			public const int notification_icon_background = 2130837537;
+			
+			// aapt resource value: 0x7f020029
+			public const int notification_template_icon_bg = 2130837545;
+			
+			// aapt resource value: 0x7f02002a
+			public const int notification_template_icon_low_bg = 2130837546;
 			
 			// aapt resource value: 0x7f020022
-			public const int notify_panel_notification_icon_bg = 2130837538;
+			public const int notification_tile_bg = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int RedCircleWithShadow = 2130837539;
+			public const int notify_panel_notification_icon_bg = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int RedCircleWithSmallShadow = 2130837540;
+			public const int RedCircleWithShadow = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int SelectorCircleButton = 2130837541;
+			public const int RedCircleWithSmallShadow = 2130837541;
 			
 			// aapt resource value: 0x7f020026
-			public const int SelectorDownloadsButton = 2130837542;
+			public const int SelectorCircleButton = 2130837542;
 			
 			// aapt resource value: 0x7f020027
-			public const int SelectorSyncButton = 2130837543;
+			public const int SelectorDownloadsButton = 2130837543;
+			
+			// aapt resource value: 0x7f020028
+			public const int SelectorSyncButton = 2130837544;
 			
 			static Drawable()
 			{
@@ -393,29 +560,29 @@ namespace UTubeSave.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a0028
-			public const int action0 = 2131361832;
+			// aapt resource value: 0x7f0a0044
+			public const int action0 = 2131361860;
 			
-			// aapt resource value: 0x7f0a0025
-			public const int action_container = 2131361829;
+			// aapt resource value: 0x7f0a0041
+			public const int action_container = 2131361857;
 			
-			// aapt resource value: 0x7f0a002c
-			public const int action_divider = 2131361836;
+			// aapt resource value: 0x7f0a0048
+			public const int action_divider = 2131361864;
 			
-			// aapt resource value: 0x7f0a0026
-			public const int action_image = 2131361830;
+			// aapt resource value: 0x7f0a0042
+			public const int action_image = 2131361858;
 			
-			// aapt resource value: 0x7f0a0027
-			public const int action_text = 2131361831;
+			// aapt resource value: 0x7f0a0043
+			public const int action_text = 2131361859;
 			
-			// aapt resource value: 0x7f0a0036
-			public const int actions = 2131361846;
+			// aapt resource value: 0x7f0a0052
+			public const int actions = 2131361874;
 			
-			// aapt resource value: 0x7f0a0024
-			public const int activityBar = 2131361828;
+			// aapt resource value: 0x7f0a0040
+			public const int activityBar = 2131361856;
 			
-			// aapt resource value: 0x7f0a0022
-			public const int adView = 2131361826;
+			// aapt resource value: 0x7f0a003e
+			public const int adView = 2131361854;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int adjust_height = 2131361797;
@@ -435,23 +602,41 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a000b
 			public const int auto = 2131361803;
 			
-			// aapt resource value: 0x7f0a0020
-			public const int availabilityView = 2131361824;
+			// aapt resource value: 0x7f0a003c
+			public const int availabilityView = 2131361852;
 			
 			// aapt resource value: 0x7f0a000f
 			public const int blocking = 2131361807;
 			
-			// aapt resource value: 0x7f0a0029
-			public const int cancel_action = 2131361833;
+			// aapt resource value: 0x7f0a0027
+			public const int button_add_response = 2131361831;
 			
-			// aapt resource value: 0x7f0a0031
-			public const int chronometer = 2131361841;
+			// aapt resource value: 0x7f0a0022
+			public const int button_attachment = 2131361826;
+			
+			// aapt resource value: 0x7f0a002c
+			public const int button_login = 2131361836;
+			
+			// aapt resource value: 0x7f0a0028
+			public const int button_refresh = 2131361832;
 			
 			// aapt resource value: 0x7f0a0023
-			public const int contentView = 2131361827;
+			public const int button_send = 2131361827;
 			
-			// aapt resource value: 0x7f0a001e
-			public const int currentDownloads = 2131361822;
+			// aapt resource value: 0x7f0a0030
+			public const int button_update = 2131361840;
+			
+			// aapt resource value: 0x7f0a0045
+			public const int cancel_action = 2131361861;
+			
+			// aapt resource value: 0x7f0a004d
+			public const int chronometer = 2131361869;
+			
+			// aapt resource value: 0x7f0a003f
+			public const int contentView = 2131361855;
+			
+			// aapt resource value: 0x7f0a003a
+			public const int currentDownloads = 2131361850;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int dark = 2131361804;
@@ -459,26 +644,62 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0014
 			public const int downloadProgressBar = 2131361812;
 			
-			// aapt resource value: 0x7f0a0038
-			public const int end_padder = 2131361848;
+			// aapt resource value: 0x7f0a0054
+			public const int end_padder = 2131361876;
 			
 			// aapt resource value: 0x7f0a0010
 			public const int forever = 2131361808;
 			
-			// aapt resource value: 0x7f0a0033
-			public const int icon = 2131361843;
+			// aapt resource value: 0x7f0a004f
+			public const int icon = 2131361871;
 			
-			// aapt resource value: 0x7f0a0037
-			public const int icon_group = 2131361847;
+			// aapt resource value: 0x7f0a0053
+			public const int icon_group = 2131361875;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int icon_only = 2131361800;
 			
-			// aapt resource value: 0x7f0a0032
-			public const int info = 2131361842;
+			// aapt resource value: 0x7f0a004e
+			public const int info = 2131361870;
+			
+			// aapt resource value: 0x7f0a001e
+			public const int input_email = 2131361822;
+			
+			// aapt resource value: 0x7f0a0020
+			public const int input_message = 2131361824;
+			
+			// aapt resource value: 0x7f0a001d
+			public const int input_name = 2131361821;
+			
+			// aapt resource value: 0x7f0a002b
+			public const int input_password = 2131361835;
+			
+			// aapt resource value: 0x7f0a001f
+			public const int input_subject = 2131361823;
 			
 			// aapt resource value: 0x7f0a0011
 			public const int italic = 2131361809;
+			
+			// aapt resource value: 0x7f0a0032
+			public const int label_author = 2131361842;
+			
+			// aapt resource value: 0x7f0a0033
+			public const int label_date = 2131361843;
+			
+			// aapt resource value: 0x7f0a0025
+			public const int label_last_updated = 2131361829;
+			
+			// aapt resource value: 0x7f0a001a
+			public const int label_message = 2131361818;
+			
+			// aapt resource value: 0x7f0a0034
+			public const int label_text = 2131361844;
+			
+			// aapt resource value: 0x7f0a002e
+			public const int label_title = 2131361838;
+			
+			// aapt resource value: 0x7f0a002f
+			public const int label_version = 2131361839;
 			
 			// aapt resource value: 0x7f0a000d
 			public const int light = 2131361805;
@@ -489,11 +710,17 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0001
 			public const int line3 = 2131361793;
 			
-			// aapt resource value: 0x7f0a002b
-			public const int media_actions = 2131361835;
+			// aapt resource value: 0x7f0a0035
+			public const int list_attachments = 2131361845;
 			
-			// aapt resource value: 0x7f0a003b
-			public const int noVideoView = 2131361851;
+			// aapt resource value: 0x7f0a0029
+			public const int list_feedback_messages = 2131361833;
+			
+			// aapt resource value: 0x7f0a0047
+			public const int media_actions = 2131361863;
+			
+			// aapt resource value: 0x7f0a0057
+			public const int noVideoView = 2131361879;
 			
 			// aapt resource value: 0x7f0a0007
 			public const int none = 2131361799;
@@ -501,47 +728,47 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0012
 			public const int normal = 2131361810;
 			
-			// aapt resource value: 0x7f0a0035
-			public const int notification_background = 2131361845;
+			// aapt resource value: 0x7f0a0051
+			public const int notification_background = 2131361873;
 			
-			// aapt resource value: 0x7f0a002e
-			public const int notification_main_column = 2131361838;
+			// aapt resource value: 0x7f0a004a
+			public const int notification_main_column = 2131361866;
 			
-			// aapt resource value: 0x7f0a002d
-			public const int notification_main_column_container = 2131361837;
+			// aapt resource value: 0x7f0a0049
+			public const int notification_main_column_container = 2131361865;
 			
-			// aapt resource value: 0x7f0a003c
-			public const int playButton = 2131361852;
+			// aapt resource value: 0x7f0a0058
+			public const int playButton = 2131361880;
 			
-			// aapt resource value: 0x7f0a003d
-			public const int removeButton = 2131361853;
+			// aapt resource value: 0x7f0a0059
+			public const int removeButton = 2131361881;
 			
 			// aapt resource value: 0x7f0a0015
 			public const int resolutionSpinner = 2131361813;
 			
-			// aapt resource value: 0x7f0a0034
-			public const int right_icon = 2131361844;
+			// aapt resource value: 0x7f0a0050
+			public const int right_icon = 2131361872;
 			
-			// aapt resource value: 0x7f0a002f
-			public const int right_side = 2131361839;
+			// aapt resource value: 0x7f0a004b
+			public const int right_side = 2131361867;
 			
-			// aapt resource value: 0x7f0a0021
-			public const int saveButton = 2131361825;
+			// aapt resource value: 0x7f0a003d
+			public const int saveButton = 2131361853;
 			
 			// aapt resource value: 0x7f0a0019
 			public const int saveVideoButton = 2131361817;
 			
-			// aapt resource value: 0x7f0a001d
-			public const int savedButton = 2131361821;
+			// aapt resource value: 0x7f0a0039
+			public const int savedButton = 2131361849;
 			
-			// aapt resource value: 0x7f0a003a
-			public const int savedVideos = 2131361850;
+			// aapt resource value: 0x7f0a0056
+			public const int savedVideos = 2131361878;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int standard = 2131361801;
 			
-			// aapt resource value: 0x7f0a002a
-			public const int status_bar_latest_event_content = 2131361834;
+			// aapt resource value: 0x7f0a0046
+			public const int status_bar_latest_event_content = 2131361862;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int text = 2131361794;
@@ -549,8 +776,11 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0003
 			public const int text2 = 2131361795;
 			
-			// aapt resource value: 0x7f0a0030
-			public const int time = 2131361840;
+			// aapt resource value: 0x7f0a002a
+			public const int text_headline = 2131361834;
+			
+			// aapt resource value: 0x7f0a004c
+			public const int time = 2131361868;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int title = 2131361796;
@@ -558,26 +788,47 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f0a0013
 			public const int titleTextView = 2131361811;
 			
-			// aapt resource value: 0x7f0a001c
-			public const int titleView = 2131361820;
+			// aapt resource value: 0x7f0a0038
+			public const int titleView = 2131361848;
 			
-			// aapt resource value: 0x7f0a001a
-			public const int topBar = 2131361818;
+			// aapt resource value: 0x7f0a0036
+			public const int topBar = 2131361846;
 			
-			// aapt resource value: 0x7f0a001b
-			public const int updateButton = 2131361819;
+			// aapt resource value: 0x7f0a0037
+			public const int updateButton = 2131361847;
 			
 			// aapt resource value: 0x7f0a0016
 			public const int videoTypeSpinner = 2131361814;
 			
-			// aapt resource value: 0x7f0a0039
-			public const int videoView = 2131361849;
+			// aapt resource value: 0x7f0a0055
+			public const int videoView = 2131361877;
 			
-			// aapt resource value: 0x7f0a001f
-			public const int webView = 2131361823;
+			// aapt resource value: 0x7f0a002d
+			public const int view_header = 2131361837;
+			
+			// aapt resource value: 0x7f0a003b
+			public const int webView = 2131361851;
+			
+			// aapt resource value: 0x7f0a0031
+			public const int web_update_details = 2131361841;
 			
 			// aapt resource value: 0x7f0a000a
 			public const int wide = 2131361802;
+			
+			// aapt resource value: 0x7f0a0021
+			public const int wrapper_attachments = 2131361825;
+			
+			// aapt resource value: 0x7f0a001c
+			public const int wrapper_feedback = 2131361820;
+			
+			// aapt resource value: 0x7f0a001b
+			public const int wrapper_feedback_scroll = 2131361819;
+			
+			// aapt resource value: 0x7f0a0024
+			public const int wrapper_messages = 2131361828;
+			
+			// aapt resource value: 0x7f0a0026
+			public const int wrapper_messages_buttons = 2131361830;
 			
 			static Id()
 			{
@@ -621,61 +872,76 @@ namespace UTubeSave.Droid
 			public const int DownloadVideoView = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Home = 2130903042;
+			public const int hockeyapp_activity_expiry_info = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int notification_action = 2130903043;
+			public const int hockeyapp_activity_feedback = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int notification_action_tombstone = 2130903044;
+			public const int hockeyapp_activity_login = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int notification_media_action = 2130903045;
+			public const int hockeyapp_fragment_update = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int notification_media_cancel_action = 2130903046;
+			public const int hockeyapp_view_feedback_message = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int notification_template_big_media = 2130903047;
+			public const int Home = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int notification_template_big_media_custom = 2130903048;
+			public const int notification_action = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int notification_template_big_media_narrow = 2130903049;
+			public const int notification_action_tombstone = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int notification_template_big_media_narrow_custom = 2130903050;
+			public const int notification_media_action = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int notification_template_custom_big = 2130903051;
+			public const int notification_media_cancel_action = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int notification_template_icon_group = 2130903052;
+			public const int notification_template_big_media = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int notification_template_lines_media = 2130903053;
+			public const int notification_template_big_media_custom = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int notification_template_media = 2130903054;
+			public const int notification_template_big_media_narrow = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int notification_template_media_custom = 2130903055;
+			public const int notification_template_big_media_narrow_custom = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int notification_template_part_chronometer = 2130903056;
+			public const int notification_template_custom_big = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int notification_template_part_time = 2130903057;
+			public const int notification_template_icon_group = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int Player = 2130903058;
+			public const int notification_template_lines_media = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int SavedVideos = 2130903059;
+			public const int notification_template_media = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int VideoItem = 2130903060;
+			public const int notification_template_media_custom = 2130903060;
+			
+			// aapt resource value: 0x7f030015
+			public const int notification_template_part_chronometer = 2130903061;
+			
+			// aapt resource value: 0x7f030016
+			public const int notification_template_part_time = 2130903062;
+			
+			// aapt resource value: 0x7f030017
+			public const int Player = 2130903063;
+			
+			// aapt resource value: 0x7f030018
+			public const int SavedVideos = 2130903064;
+			
+			// aapt resource value: 0x7f030019
+			public const int VideoItem = 2130903065;
 			
 			static Layout()
 			{
@@ -690,29 +956,29 @@ namespace UTubeSave.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050018
-			public const int app_name = 2131034136;
+			// aapt resource value: 0x7f05006f
+			public const int app_name = 2131034223;
 			
-			// aapt resource value: 0x7f05001b
-			public const int audio_bitrade = 2131034139;
+			// aapt resource value: 0x7f050072
+			public const int audio_bitrade = 2131034226;
 			
-			// aapt resource value: 0x7f05001c
-			public const int audio_type = 2131034140;
+			// aapt resource value: 0x7f050073
+			public const int audio_type = 2131034227;
 			
-			// aapt resource value: 0x7f05001f
-			public const int available = 2131034143;
+			// aapt resource value: 0x7f050076
+			public const int available = 2131034230;
 			
-			// aapt resource value: 0x7f050021
-			public const int cannot_download = 2131034145;
+			// aapt resource value: 0x7f050078
+			public const int cannot_download = 2131034232;
 			
-			// aapt resource value: 0x7f050023
-			public const int cannot_download_audio = 2131034147;
+			// aapt resource value: 0x7f05007a
+			public const int cannot_download_audio = 2131034234;
 			
-			// aapt resource value: 0x7f050022
-			public const int cannot_download_video = 2131034146;
+			// aapt resource value: 0x7f050079
+			public const int cannot_download_video = 2131034233;
 			
-			// aapt resource value: 0x7f050024
-			public const int cannot_remove_video = 2131034148;
+			// aapt resource value: 0x7f05007b
+			public const int cannot_remove_video = 2131034235;
 			
 			// aapt resource value: 0x7f050001
 			public const int common_google_play_services_enable_button = 2131034113;
@@ -765,23 +1031,284 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f050010
 			public const int common_signin_button_text_long = 2131034128;
 			
-			// aapt resource value: 0x7f05002a
-			public const int no = 2131034154;
+			// aapt resource value: 0x7f050019
+			public const int hockeyapp_crash_dialog_app_name_fallback = 2131034137;
+			
+			// aapt resource value: 0x7f05001a
+			public const int hockeyapp_crash_dialog_message = 2131034138;
+			
+			// aapt resource value: 0x7f05001b
+			public const int hockeyapp_crash_dialog_negative_button = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int hockeyapp_crash_dialog_neutral_button = 2131034140;
+			
+			// aapt resource value: 0x7f05001d
+			public const int hockeyapp_crash_dialog_positive_button = 2131034141;
+			
+			// aapt resource value: 0x7f05001e
+			public const int hockeyapp_crash_dialog_title = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int hockeyapp_dialog_error_message = 2131034143;
+			
+			// aapt resource value: 0x7f050020
+			public const int hockeyapp_dialog_error_title = 2131034144;
+			
+			// aapt resource value: 0x7f050021
+			public const int hockeyapp_dialog_positive_button = 2131034145;
+			
+			// aapt resource value: 0x7f050022
+			public const int hockeyapp_download_failed_dialog_message = 2131034146;
+			
+			// aapt resource value: 0x7f050023
+			public const int hockeyapp_download_failed_dialog_negative_button = 2131034147;
+			
+			// aapt resource value: 0x7f050024
+			public const int hockeyapp_download_failed_dialog_positive_button = 2131034148;
 			
 			// aapt resource value: 0x7f050025
-			public const int no_internet = 2131034149;
+			public const int hockeyapp_download_failed_dialog_title = 2131034149;
 			
 			// aapt resource value: 0x7f050026
-			public const int no_videos = 2131034150;
+			public const int hockeyapp_error_install_form_unknown_sources_disabled = 2131034150;
 			
 			// aapt resource value: 0x7f050027
-			public const int remove_video_message = 2131034151;
+			public const int hockeyapp_error_no_external_storage_permission = 2131034151;
 			
 			// aapt resource value: 0x7f050028
-			public const int remove_video_title = 2131034152;
+			public const int hockeyapp_error_no_network_message = 2131034152;
 			
-			// aapt resource value: 0x7f050019
-			public const int resolution = 2131034137;
+			// aapt resource value: 0x7f050029
+			public const int hockeyapp_expiry_info_text = 2131034153;
+			
+			// aapt resource value: 0x7f05002a
+			public const int hockeyapp_expiry_info_title = 2131034154;
+			
+			// aapt resource value: 0x7f05002b
+			public const int hockeyapp_feedback_attach_file = 2131034155;
+			
+			// aapt resource value: 0x7f05002c
+			public const int hockeyapp_feedback_attach_picture = 2131034156;
+			
+			// aapt resource value: 0x7f05002d
+			public const int hockeyapp_feedback_attachment_added = 2131034157;
+			
+			// aapt resource value: 0x7f05002e
+			public const int hockeyapp_feedback_attachment_button_text = 2131034158;
+			
+			// aapt resource value: 0x7f05002f
+			public const int hockeyapp_feedback_attachment_error = 2131034159;
+			
+			// aapt resource value: 0x7f050030
+			public const int hockeyapp_feedback_attachment_loading = 2131034160;
+			
+			// aapt resource value: 0x7f050031
+			public const int hockeyapp_feedback_attachment_remove_description = 2131034161;
+			
+			// aapt resource value: 0x7f050032
+			public const int hockeyapp_feedback_attachment_removed = 2131034162;
+			
+			// aapt resource value: 0x7f050033
+			public const int hockeyapp_feedback_email_hint = 2131034163;
+			
+			// aapt resource value: 0x7f050034
+			public const int hockeyapp_feedback_email_hint_required = 2131034164;
+			
+			// aapt resource value: 0x7f050035
+			public const int hockeyapp_feedback_fetching_feedback_text = 2131034165;
+			
+			// aapt resource value: 0x7f050036
+			public const int hockeyapp_feedback_last_updated_text = 2131034166;
+			
+			// aapt resource value: 0x7f050037
+			public const int hockeyapp_feedback_max_attachments_allowed = 2131034167;
+			
+			// aapt resource value: 0x7f050038
+			public const int hockeyapp_feedback_message_hint = 2131034168;
+			
+			// aapt resource value: 0x7f050039
+			public const int hockeyapp_feedback_message_hint_required = 2131034169;
+			
+			// aapt resource value: 0x7f05003a
+			public const int hockeyapp_feedback_name_hint = 2131034170;
+			
+			// aapt resource value: 0x7f05003b
+			public const int hockeyapp_feedback_name_hint_required = 2131034171;
+			
+			// aapt resource value: 0x7f05003c
+			public const int hockeyapp_feedback_new_answer_notification_message = 2131034172;
+			
+			// aapt resource value: 0x7f05006d
+			public const int hockeyapp_feedback_notification_channel = 2131034221;
+			
+			// aapt resource value: 0x7f05003d
+			public const int hockeyapp_feedback_notification_title = 2131034173;
+			
+			// aapt resource value: 0x7f05003e
+			public const int hockeyapp_feedback_refresh_button_text = 2131034174;
+			
+			// aapt resource value: 0x7f05003f
+			public const int hockeyapp_feedback_response_button_text = 2131034175;
+			
+			// aapt resource value: 0x7f050040
+			public const int hockeyapp_feedback_screenshot_fail = 2131034176;
+			
+			// aapt resource value: 0x7f050041
+			public const int hockeyapp_feedback_screenshot_notification_message = 2131034177;
+			
+			// aapt resource value: 0x7f050042
+			public const int hockeyapp_feedback_select_file = 2131034178;
+			
+			// aapt resource value: 0x7f050043
+			public const int hockeyapp_feedback_select_picture = 2131034179;
+			
+			// aapt resource value: 0x7f050044
+			public const int hockeyapp_feedback_send_button_text = 2131034180;
+			
+			// aapt resource value: 0x7f050045
+			public const int hockeyapp_feedback_send_generic_error = 2131034181;
+			
+			// aapt resource value: 0x7f050046
+			public const int hockeyapp_feedback_send_network_error = 2131034182;
+			
+			// aapt resource value: 0x7f050047
+			public const int hockeyapp_feedback_sending_feedback_text = 2131034183;
+			
+			// aapt resource value: 0x7f050048
+			public const int hockeyapp_feedback_sent_toast = 2131034184;
+			
+			// aapt resource value: 0x7f050049
+			public const int hockeyapp_feedback_subject_hint = 2131034185;
+			
+			// aapt resource value: 0x7f05004a
+			public const int hockeyapp_feedback_subject_hint_required = 2131034186;
+			
+			// aapt resource value: 0x7f05004b
+			public const int hockeyapp_feedback_title = 2131034187;
+			
+			// aapt resource value: 0x7f05004c
+			public const int hockeyapp_feedback_validate_email_empty = 2131034188;
+			
+			// aapt resource value: 0x7f05004d
+			public const int hockeyapp_feedback_validate_email_error = 2131034189;
+			
+			// aapt resource value: 0x7f05004e
+			public const int hockeyapp_feedback_validate_name_error = 2131034190;
+			
+			// aapt resource value: 0x7f05004f
+			public const int hockeyapp_feedback_validate_subject_error = 2131034191;
+			
+			// aapt resource value: 0x7f050050
+			public const int hockeyapp_feedback_validate_text_error = 2131034192;
+			
+			// aapt resource value: 0x7f050051
+			public const int hockeyapp_login_email_hint_required = 2131034193;
+			
+			// aapt resource value: 0x7f050052
+			public const int hockeyapp_login_headline_text = 2131034194;
+			
+			// aapt resource value: 0x7f050053
+			public const int hockeyapp_login_headline_text_email_only = 2131034195;
+			
+			// aapt resource value: 0x7f050054
+			public const int hockeyapp_login_login_button_text = 2131034196;
+			
+			// aapt resource value: 0x7f050055
+			public const int hockeyapp_login_missing_credentials_toast = 2131034197;
+			
+			// aapt resource value: 0x7f050056
+			public const int hockeyapp_login_password_hint_required = 2131034198;
+			
+			// aapt resource value: 0x7f050057
+			public const int hockeyapp_paint_dialog_message = 2131034199;
+			
+			// aapt resource value: 0x7f050058
+			public const int hockeyapp_paint_dialog_negative_button = 2131034200;
+			
+			// aapt resource value: 0x7f050059
+			public const int hockeyapp_paint_dialog_neutral_button = 2131034201;
+			
+			// aapt resource value: 0x7f05005a
+			public const int hockeyapp_paint_dialog_positive_button = 2131034202;
+			
+			// aapt resource value: 0x7f05005b
+			public const int hockeyapp_paint_indicator_toast = 2131034203;
+			
+			// aapt resource value: 0x7f05005c
+			public const int hockeyapp_paint_menu_clear = 2131034204;
+			
+			// aapt resource value: 0x7f05005d
+			public const int hockeyapp_paint_menu_save = 2131034205;
+			
+			// aapt resource value: 0x7f05005e
+			public const int hockeyapp_paint_menu_undo = 2131034206;
+			
+			// aapt resource value: 0x7f05005f
+			public const int hockeyapp_update_already_installed = 2131034207;
+			
+			// aapt resource value: 0x7f050060
+			public const int hockeyapp_update_button = 2131034208;
+			
+			// aapt resource value: 0x7f050061
+			public const int hockeyapp_update_dialog_message = 2131034209;
+			
+			// aapt resource value: 0x7f050062
+			public const int hockeyapp_update_dialog_negative_button = 2131034210;
+			
+			// aapt resource value: 0x7f050063
+			public const int hockeyapp_update_dialog_positive_button = 2131034211;
+			
+			// aapt resource value: 0x7f050064
+			public const int hockeyapp_update_dialog_title = 2131034212;
+			
+			// aapt resource value: 0x7f050065
+			public const int hockeyapp_update_loading = 2131034213;
+			
+			// aapt resource value: 0x7f050066
+			public const int hockeyapp_update_mandatory_toast = 2131034214;
+			
+			// aapt resource value: 0x7f050067
+			public const int hockeyapp_update_newest_version = 2131034215;
+			
+			// aapt resource value: 0x7f050068
+			public const int hockeyapp_update_no_info = 2131034216;
+			
+			// aapt resource value: 0x7f050069
+			public const int hockeyapp_update_restore = 2131034217;
+			
+			// aapt resource value: 0x7f05006a
+			public const int hockeyapp_update_title = 2131034218;
+			
+			// aapt resource value: 0x7f05006b
+			public const int hockeyapp_update_unknown_size = 2131034219;
+			
+			// aapt resource value: 0x7f05006c
+			public const int hockeyapp_update_version = 2131034220;
+			
+			// aapt resource value: 0x7f05006e
+			public const int hockeyapp_update_version_details_label = 2131034222;
+			
+			// aapt resource value: 0x7f050018
+			public const int library_name = 2131034136;
+			
+			// aapt resource value: 0x7f050081
+			public const int no = 2131034241;
+			
+			// aapt resource value: 0x7f05007c
+			public const int no_internet = 2131034236;
+			
+			// aapt resource value: 0x7f05007d
+			public const int no_videos = 2131034237;
+			
+			// aapt resource value: 0x7f05007e
+			public const int remove_video_message = 2131034238;
+			
+			// aapt resource value: 0x7f05007f
+			public const int remove_video_title = 2131034239;
+			
+			// aapt resource value: 0x7f050070
+			public const int resolution = 2131034224;
 			
 			// aapt resource value: 0x7f050011
 			public const int s1 = 2131034129;
@@ -801,23 +1328,23 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f050016
 			public const int s6 = 2131034134;
 			
-			// aapt resource value: 0x7f05001d
-			public const int save_audio = 2131034141;
+			// aapt resource value: 0x7f050074
+			public const int save_audio = 2131034228;
 			
-			// aapt resource value: 0x7f05001e
-			public const int save_video = 2131034142;
+			// aapt resource value: 0x7f050075
+			public const int save_video = 2131034229;
 			
-			// aapt resource value: 0x7f050020
-			public const int saved_videos = 2131034144;
+			// aapt resource value: 0x7f050077
+			public const int saved_videos = 2131034231;
 			
 			// aapt resource value: 0x7f050017
 			public const int status_bar_notification_info_overflow = 2131034135;
 			
-			// aapt resource value: 0x7f05001a
-			public const int video_type = 2131034138;
+			// aapt resource value: 0x7f050071
+			public const int video_type = 2131034225;
 			
-			// aapt resource value: 0x7f050029
-			public const int yes = 2131034153;
+			// aapt resource value: 0x7f050080
+			public const int yes = 2131034240;
 			
 			static String()
 			{
@@ -831,6 +1358,15 @@ namespace UTubeSave.Droid
 		
 		public partial class Style
 		{
+			
+			// aapt resource value: 0x7f07000d
+			public const int HockeyApp_ButtonStyle = 2131165197;
+			
+			// aapt resource value: 0x7f07000e
+			public const int HockeyApp_EditTextStyle = 2131165198;
+			
+			// aapt resource value: 0x7f07000f
+			public const int HockeyApp_SingleLineInputStyle = 2131165199;
 			
 			// aapt resource value: 0x7f070006
 			public const int TextAppearance_Compat_Notification = 2131165190;

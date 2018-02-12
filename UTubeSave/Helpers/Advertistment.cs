@@ -33,6 +33,7 @@ namespace UTubeSave.Droid.Helpers
                 return await ShowBetweenPagesAd(context);
             }
 
+            Tracker.TrackRewardAdShown();
             return true;
         }
 

@@ -34,6 +34,7 @@ namespace UTubeSave.Droid.Helpers.Advert
 
         void InterstitialAdRewardedVideoAdClosed(object sender, EventArgs e)
         {
+            Tracker.TrackBetweenAdShown();
             _completionSource.TrySetResult(true);
         }
 

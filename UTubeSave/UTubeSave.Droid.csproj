@@ -101,6 +101,12 @@
     <Reference Include="Plugin.SecureStorage">
       <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.0\lib\MonoAndroid10\Plugin.SecureStorage.dll</HintPath>
     </Reference>
+    <Reference Include="HockeySDK.AndroidBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\MonoAndroid403\HockeySDK.AndroidBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\MonoAndroid403\HockeySDK.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -143,6 +149,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Model\VideoStatus.cs" />
     <Compile Include="Helpers\SystemInfo.cs" />
+    <Compile Include="Helpers\Tracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

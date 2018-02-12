@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
+using UTubeSave.Droid.Helpers;
 
 namespace UTubeSave.Droid
 {
@@ -29,6 +30,8 @@ namespace UTubeSave.Droid
             _videoView.SetVideoURI(uri);
             _videoView.SetMediaController(new MediaController(this));
             _videoView.Start();
+
+            Tracker.TrackPlayVideo();
         }
 
         protected override void OnPause()

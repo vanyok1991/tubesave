@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Views;
 using Android.Webkit;
 using Android.Widget;
+using HockeyApp.Android;
 using UTubeSave.Droid.Extractor;
 using UTubeSave.Droid.Helpers;
 using UTubeSave.Droid.Model;
@@ -22,6 +23,7 @@ namespace UTubeSave.Droid
     public class HomeActivity : Activity
     {
         const string _youtubeHomeUrl = "https://www.youtube.com/?app=desktop&persist_app=1&noapp=1";
+        const string _hockeyAppId = "23846652d664499bb0e48e4fb4afe475";
 
         DownloadVideoView _downloadVideoView;
         ViewGroup _contentView;
@@ -37,6 +39,8 @@ namespace UTubeSave.Droid
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Home);
+
+            CrashManager.Register(this, _hockeyAppId);
 
             _contentView = FindViewById<ViewGroup>(Resource.Id.contentView);
             _downloadsView = FindViewById<ViewGroup>(Resource.Id.currentDownloads);
@@ -182,6 +186,7 @@ namespace UTubeSave.Droid
                 return videoInfos;
             }catch (Exception ex)
             {
+                Tracker.TrackVideoNotAvailable();
                 Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
                 return null;
             }
@@ -236,6 +241,7 @@ namespace UTubeSave.Droid
                         videoDownloader.Execute();
                     }catch(Exception ex)
                     {
+                        Tracker.TrackVideoDownloadingFailed();
                         RunOnUiThread(() =>
                         {
                             Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
@@ -247,8 +253,8 @@ namespace UTubeSave.Droid
 
             }catch (Exception ex)
             {
+                Tracker.TrackStartDownloadVideoFailed();
                 Toast.MakeText(this, ex.Message, ToastLength.Short).Show();
-                Console.WriteLine($"DownloadVideo {ex.Message}");
             }
         }
 
