@@ -17,7 +17,9 @@
         android:layout_weight="10" />
     <ImageButton
         android:layout_margin="5dp"
+        android:padding="8dp"
         android:id="@+id/playButton"
+        android:background="@android:color/transparent"
         android:src="@android:drawable/ic_media_play"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -26,7 +28,9 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_marginRight="5dp"
+        android:padding="8dp"
         android:id="@+id/removeButton"
+        android:background="@android:color/transparent"
         android:src="@android:drawable/ic_delete"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
