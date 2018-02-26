@@ -47,9 +47,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Basement">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Basement.60.1142.0\lib\MonoAndroid80\Xamarin.GooglePlayServices.Basement.dll</HintPath>
     </Reference>
@@ -95,17 +92,20 @@
     <Reference Include="Xamarin.Android.Support.Media.Compat">
       <HintPath>..\packages\Xamarin.Android.Support.Media.Compat.26.1.0.1\lib\MonoAndroid80\Xamarin.Android.Support.Media.Compat.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.SecureStorage.Abstractions">
-      <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.0\lib\MonoAndroid10\Plugin.SecureStorage.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.SecureStorage">
-      <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.0\lib\MonoAndroid10\Plugin.SecureStorage.dll</HintPath>
-    </Reference>
     <Reference Include="HockeySDK.AndroidBindings">
       <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\MonoAndroid403\HockeySDK.AndroidBindings.dll</HintPath>
     </Reference>
     <Reference Include="HockeySDK">
       <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\MonoAndroid403\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.SecureStorage.Abstractions">
+      <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.1\lib\MonoAndroid10\Plugin.SecureStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.SecureStorage">
+      <HintPath>..\packages\sameerIOTApps.Plugin.SecureStorage.2.0.1\lib\MonoAndroid10\Plugin.SecureStorage.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
