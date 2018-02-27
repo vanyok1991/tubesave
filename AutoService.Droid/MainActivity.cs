@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace AutoService.Droid
 {
-    [Activity(Label = "AutoService", MainLauncher = true)]
+    [Activity(MainLauncher = true)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
