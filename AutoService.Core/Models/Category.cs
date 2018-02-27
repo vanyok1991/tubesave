@@ -6,6 +6,8 @@ namespace AutoService.Core.Models
     {
         public string Title { get; set; }
 
+        public CategoryId Id { get; set; }
+
         public List<Service> Services { get; set; }
     }
 }
