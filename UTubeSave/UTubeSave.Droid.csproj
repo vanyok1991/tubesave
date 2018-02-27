@@ -38,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidLinkMode>Full</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -192,6 +193,11 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_sync_black_36dp.png" />
     <AndroidResource Include="Resources\drawable\SelectorSyncButton.axml" />
     <AndroidResource Include="Resources\drawable\SelectorDownloadsButton.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\UTubeLogo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\UTubeLogo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\UTubeLogo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\UTubeLogo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\UTubeLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

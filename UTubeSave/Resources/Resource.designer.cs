@@ -520,11 +520,11 @@ namespace UTubeSave.Droid
 			// aapt resource value: 0x7f020021
 			public const int notification_icon_background = 2130837537;
 			
-			// aapt resource value: 0x7f020029
-			public const int notification_template_icon_bg = 2130837545;
-			
 			// aapt resource value: 0x7f02002a
-			public const int notification_template_icon_low_bg = 2130837546;
+			public const int notification_template_icon_bg = 2130837546;
+			
+			// aapt resource value: 0x7f02002b
+			public const int notification_template_icon_low_bg = 2130837547;
 			
 			// aapt resource value: 0x7f020022
 			public const int notification_tile_bg = 2130837538;
@@ -546,6 +546,9 @@ namespace UTubeSave.Droid
 			
 			// aapt resource value: 0x7f020028
 			public const int SelectorSyncButton = 2130837544;
+			
+			// aapt resource value: 0x7f020029
+			public const int UTubeLogo = 2130837545;
 			
 			static Drawable()
 			{
