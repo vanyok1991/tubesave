@@ -198,6 +198,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\UTubeLogo.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\UTubeLogo.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\UTubeLogo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\VideoLogo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\VideoLogo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\VideoLogo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\VideoLogo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\VideoLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
