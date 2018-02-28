@@ -1,4 +1,6 @@
-﻿namespace AutoService.Core.Models
+﻿using System.Collections.Generic;
+
+namespace AutoService.Core.Models
 {
     public class Service
     {
@@ -10,6 +12,8 @@
 
         public float Longitude { get; set; }
 
-        public string Phone { get; set; }
+        public List<string> Phones { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }
